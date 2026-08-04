@@ -21,6 +21,9 @@ export type Product = {
   category: string;
   brand: string;
   sale_price: number;
+  purchase_price: number;
+  shipping_cost: number;
+  commission_rate: number;
   monthly_sales_low: number;
   monthly_sales_high: number;
   sellers: number;

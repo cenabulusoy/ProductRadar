@@ -33,6 +33,7 @@ export function ProductCard({ product, onFavorite }: { product: Product; onFavor
         <div><h4>Waarom kopen?</h4><p>{a.buy_reasons[0]}</p></div>
         <div><h4>Waarom niet?</h4><p>{a.avoid_reasons[0]}</p></div>
       </div>
+      <a className="detail-button" href={`/products/${product.id}`}>Open volledige analyse →</a>
       <footer>{product.sellers} aanbieders · {product.reviews} reviews · {product.confidence}% betrouwbaarheid</footer>
     </article>
   );
