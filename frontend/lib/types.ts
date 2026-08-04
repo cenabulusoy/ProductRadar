@@ -1,3 +1,10 @@
+export type ProductDNAItem = {
+  key: string;
+  label: string;
+  score: number;
+  stars: number;
+};
+
 export type Analysis = {
   average_monthly_sales: number;
   monthly_revenue: number;
@@ -11,8 +18,15 @@ export type Analysis = {
   demand_score: number;
   competition_score: number;
   trend_score: number;
+  margin_score: number;
+  roi_score: number;
+  capital_efficiency_score: number;
+  confidence_score: number;
+  verdict: "Kansrijk" | "Onderzoeken" | "Twijfel" | "Niet inkopen";
+  verdict_detail: string;
   buy_reasons: string[];
   avoid_reasons: string[];
+  product_dna: ProductDNAItem[];
 };
 
 export type Product = {

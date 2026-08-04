@@ -10,6 +10,10 @@ function money(value: number) {
   return new Intl.NumberFormat("nl-NL", { style: "currency", currency: "EUR" }).format(value);
 }
 
+function Stars({ value }: { value: number }) {
+  return <span className="dna-stars" aria-label={`${value} van 5 sterren`}>{"★".repeat(value)}{"☆".repeat(5 - value)}</span>;
+}
+
 export function ProductDetail({ product }: Props) {
   const [salePrice, setSalePrice] = useState(product.sale_price);
   const [purchasePrice, setPurchasePrice] = useState(product.purchase_price);
@@ -27,12 +31,6 @@ export function ProductDetail({ product }: Props) {
     return { vat, commission, netProfit, margin, roi, monthlyProfit };
   }, [salePrice, purchasePrice, shippingCost, commissionRate, returnReserve, product]);
 
-  const advice = product.analysis.opportunity_score >= 75
-    ? "Sterke kandidaat"
-    : product.analysis.opportunity_score >= 60
-      ? "Verder onderzoeken"
-      : "Voorzichtig benaderen";
-
   return (
     <div className="detail-page">
       <a className="back-link" href="/">← Terug naar Product Hunter</a>
@@ -41,12 +39,13 @@ export function ProductDetail({ product }: Props) {
         <div>
           <span className="eyebrow">{product.category} · {product.brand}</span>
           <h1>{product.name}</h1>
-          <p>Een beslisscherm dat marktpotentieel, winst en risico samenbrengt.</p>
+          <p>Een uitlegbare beslissing op basis van marktpotentieel, winst en risico.</p>
         </div>
-        <div className="decision-card">
-          <span>ProductRadar-advies</span>
-          <strong>{advice}</strong>
-          <small>Opportunity Score {product.analysis.opportunity_score}/100</small>
+        <div className={`decision-card verdict-${product.analysis.verdict.toLowerCase().replace(" ", "-")}`}>
+          <span>ProductRadar-beslissing</span>
+          <strong>{product.analysis.verdict}</strong>
+          <small>{product.analysis.verdict_detail}</small>
+          <b>Score {product.analysis.opportunity_score}/100</b>
         </div>
       </section>
 
@@ -59,14 +58,20 @@ export function ProductDetail({ product }: Props) {
 
       <section className="detail-columns">
         <div className="panel score-panel">
-          <div className="section-title"><div><span className="eyebrow">SCORING ENGINE</span><h2>Waarom scoort dit product zo?</h2></div><div className="score-badge">{product.analysis.opportunity_score}</div></div>
+          <div className="section-title">
+            <div><span className="eyebrow">DECISION ENGINE V1</span><h2>Waarom scoort dit product zo?</h2></div>
+            <div className="score-badge">{product.analysis.opportunity_score}</div>
+          </div>
           <ScoreBar label="Market Score" value={product.analysis.market_score} />
           <ScoreBar label="Profit Score" value={product.analysis.profit_score} />
           <ScoreBar label="Risk Safety" value={product.analysis.risk_score} />
           <div className="score-explain-grid">
-            <div><span>Vraag</span><strong>{product.analysis.demand_score}/100</strong><p>Afgeleid uit verkooprange, reviewgroei en trend.</p></div>
-            <div><span>Concurrentie</span><strong>{product.analysis.competition_score}/100</strong><p>Hoger is gunstiger: minder aanbieders en lagere reviewbarrière.</p></div>
-            <div><span>Trend</span><strong>{product.analysis.trend_score}/100</strong><p>Indicatie op basis van ingevoerde marktontwikkeling.</p></div>
+            <div><span>Vraag</span><strong>{product.analysis.demand_score}/100</strong><p>Verkooprange, reviewgroei en trend.</p></div>
+            <div><span>Concurrentie</span><strong>{product.analysis.competition_score}/100</strong><p>Hoger betekent minder marktbarrières.</p></div>
+            <div><span>Trend</span><strong>{product.analysis.trend_score}/100</strong><p>Momentum in de ingevoerde marktdata.</p></div>
+            <div><span>Marge</span><strong>{product.analysis.margin_score}/100</strong><p>Ruimte tussen verkoop- en operationele kosten.</p></div>
+            <div><span>ROI</span><strong>{product.analysis.roi_score}/100</strong><p>Opbrengst ten opzichte van de inkoop.</p></div>
+            <div><span>Kapitaalefficiëntie</span><strong>{product.analysis.capital_efficiency_score}/100</strong><p>Hoeveel kapitaal één voorraadpositie vraagt.</p></div>
           </div>
         </div>
 
@@ -81,12 +86,30 @@ export function ProductDetail({ product }: Props) {
             <h3>Waarom niet kopen?</h3>
             <ul>{product.analysis.avoid_reasons.map((reason) => <li key={reason}>{reason}</li>)}</ul>
           </div>
-          <p className="disclaimer">Deze analyse is een beslissingshulp. Verkoopcijfers zijn schattingen totdat echte historische marktdata is aangesloten.</p>
+          <p className="disclaimer">Deze analyse is een beslissingshulp. Verkoopcijfers blijven schattingen totdat echte historische marktdata is aangesloten.</p>
+        </div>
+      </section>
+
+      <section className="panel dna-panel">
+        <div className="section-title">
+          <div><span className="eyebrow">PRODUCTDNA</span><h2>Past dit product bij jouw strategie?</h2></div>
+          <small>Scores zijn afgeleid uit de huidige invoer</small>
+        </div>
+        <div className="dna-grid">
+          {product.analysis.product_dna.map((item) => (
+            <div className="dna-item" key={item.key}>
+              <div><strong>{item.label}</strong><span>{item.score}/100</span></div>
+              <Stars value={item.stars} />
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="panel calculator-panel">
-        <div className="section-title"><div><span className="eyebrow">PROFIT CALCULATOR</span><h2>Test je eigen inkoopscenario</h2></div><strong className={scenario.netProfit >= 0 ? "profit-positive" : "profit-negative"}>{money(scenario.netProfit)} winst/stuk</strong></div>
+        <div className="section-title">
+          <div><span className="eyebrow">PROFIT CALCULATOR</span><h2>Test je eigen inkoopscenario</h2></div>
+          <strong className={scenario.netProfit >= 0 ? "profit-positive" : "profit-negative"}>{money(scenario.netProfit)} winst/stuk</strong>
+        </div>
         <div className="calculator-grid">
           <label>Verkoopprijs<input type="number" step="0.01" value={salePrice} onChange={(e) => setSalePrice(Number(e.target.value))} /></label>
           <label>Inkoopprijs<input type="number" step="0.01" value={purchasePrice} onChange={(e) => setPurchasePrice(Number(e.target.value))} /></label>
