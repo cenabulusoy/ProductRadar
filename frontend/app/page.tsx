@@ -1,16 +1,23 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { Filters } from "../components/Filters";
 import { ProductCard } from "../components/ProductCard";
 import { SearchBar } from "../components/SearchBar";
-import { searchProducts } from "../lib/search";
-import { Product } from "../lib/types";
-import { Filters } from "../components/Filters";
 import {
   defaultFilters,
   filterProducts,
   ProductFilters,
 } from "../lib/filters";
+import { searchProducts } from "../lib/search";
+import { Product } from "../lib/types";
+
+type SortOption =
+  | "opportunity"
+  | "margin"
+  | "revenue"
+  | "sales"
+  | "sellers";
 
 const API =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
@@ -19,7 +26,9 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [search, setSearch] = useState("");
   const [filters, setFilters] =
-  useState<ProductFilters>(defaultFilters);
+    useState<ProductFilters>(defaultFilters);
+  const [sortBy, setSortBy] =
+    useState<SortOption>("opportunity");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -57,23 +66,54 @@ export default function Home() {
     await loadProducts();
   }
 
-const searchedProducts = useMemo(
-  () => searchProducts(products, search),
-  [products, search],
-);
+  const searchedProducts = useMemo(
+    () => searchProducts(products, search),
+    [products, search],
+  );
 
-const visibleProducts = useMemo(
-  () => filterProducts(searchedProducts, filters),
-  [searchedProducts, filters],
-);
+  const visibleProducts = useMemo(() => {
+    const filtered = filterProducts(searchedProducts, filters);
 
-const categories = useMemo(
-  () =>
-    Array.from(
-      new Set(products.map((product) => product.category)),
-    ).sort(),
-  [products],
-);
+    return [...filtered].sort((a, b) => {
+      switch (sortBy) {
+        case "margin":
+          return (
+            b.analysis.margin_percent -
+            a.analysis.margin_percent
+          );
+
+        case "revenue":
+          return (
+            b.analysis.monthly_revenue -
+            a.analysis.monthly_revenue
+          );
+
+        case "sales":
+          return (
+            b.analysis.average_monthly_sales -
+            a.analysis.average_monthly_sales
+          );
+
+        case "sellers":
+          return a.sellers - b.sellers;
+
+        case "opportunity":
+        default:
+          return (
+            b.analysis.opportunity_score -
+            a.analysis.opportunity_score
+          );
+      }
+    });
+  }, [searchedProducts, filters, sortBy]);
+
+  const categories = useMemo(
+    () =>
+      Array.from(
+        new Set(products.map((product) => product.category)),
+      ).sort(),
+    [products],
+  );
 
   const stats = useMemo(() => {
     const opportunities = visibleProducts.filter(
@@ -140,8 +180,8 @@ const categories = useMemo(
             </h1>
 
             <p>
-              Zoek direct op product, merk of categorie en
-              vergelijk kansen zonder nieuwe API-aanvraag.
+              Zoek, filter en sorteer producten op basis van
+              markt-, winst- en risicoscores.
             </p>
           </div>
 
@@ -163,9 +203,7 @@ const categories = useMemo(
 
           <div>
             <span>Gem. marge</span>
-            <strong>
-              {stats.averageMargin.toFixed(1)}%
-            </strong>
+            <strong>{stats.averageMargin.toFixed(1)}%</strong>
           </div>
 
           <div>
@@ -179,61 +217,87 @@ const categories = useMemo(
           </div>
         </div>
 
-        <SearchBar
-          value={search}
-          resultCount={visibleProducts.length}
-          totalCount={products.length}
-          onChange={setSearch}
-          onClear={() => setSearch("")}
-        />
+        <div className="hunter-toolbar">
+          <SearchBar
+            value={search}
+            resultCount={visibleProducts.length}
+            totalCount={products.length}
+            onChange={setSearch}
+            onClear={() => setSearch("")}
+          />
+
+          <label className="sort-control">
+            <span>Sorteren op</span>
+
+            <select
+              value={sortBy}
+              onChange={(event) =>
+                setSortBy(event.target.value as SortOption)
+              }
+            >
+              <option value="opportunity">
+                Hoogste Opportunity Score
+              </option>
+              <option value="margin">Hoogste marge</option>
+              <option value="revenue">Hoogste omzet</option>
+              <option value="sales">Meeste verkopen</option>
+              <option value="sellers">Minste aanbieders</option>
+            </select>
+          </label>
+        </div>
 
         {error && (
           <div className="error">
-            {error}. Start eerst de FastAPI-backend op
-            poort 8000.
+            {error}. Start eerst de FastAPI-backend op poort
+            8000.
           </div>
         )}
 
-<div className="hunter-layout">
-  <Filters
-    filters={filters}
-    categories={categories}
-    onChange={setFilters}
-    onReset={() => setFilters(defaultFilters)}
-  />
-
-  <div className="hunter-results">
-    {loading ? (
-      <p>Laden…</p>
-    ) : visibleProducts.length ? (
-      <div className="grid">
-        {visibleProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onFavorite={toggleFavorite}
+        <div className="hunter-layout">
+          <Filters
+            filters={filters}
+            categories={categories}
+            onChange={setFilters}
+            onReset={() => setFilters(defaultFilters)}
           />
-        ))}
-      </div>
-    ) : (
-      <div className="empty-state panel">
-        <strong>Geen passende producten gevonden</strong>
-        <p>Verlaag één of meer filters.</p>
 
-        <button
-          type="button"
-          onClick={() => {
-            setSearch("");
-            setFilters(defaultFilters);
-          }}
-        >
-          Alle filters wissen
-        </button>
-      </div>
-    )}
-  </div>
-</div>
-        
+          <div className="hunter-results">
+            {loading ? (
+              <p>Laden…</p>
+            ) : visibleProducts.length ? (
+              <div className="grid">
+                {visibleProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onFavorite={toggleFavorite}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state panel">
+                <strong>
+                  Geen passende producten gevonden
+                </strong>
+
+                <p>
+                  Verlaag één of meer filters of wijzig je
+                  zoekopdracht.
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearch("");
+                    setFilters(defaultFilters);
+                  }}
+                >
+                  Alle filters wissen
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
       </section>
     </main>
   );
