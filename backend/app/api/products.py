@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, File, HTTPException, Query, UploadFile
+from app.services.scoring import calculate_scores
+from app.services.importer import parse_csv
 
 from app.core.database import get_connection
 from app.services.scoring import calculate_scores
@@ -49,3 +51,35 @@ def toggle_favorite(product_id: int) -> dict:
         value = 0 if row["favorite"] else 1
         db.execute("UPDATE products SET favorite = ? WHERE id = ?", (value, product_id))
     return {"id": product_id, "favorite": bool(value)}
+
+@router.post("/import/preview")
+async def preview_import(file: UploadFile = File(...)) -> dict:
+    if not file.filename or not file.filename.lower().endswith(".csv"):
+        raise HTTPException(
+            status_code=400,
+            detail="Upload een CSV-bestand",
+        )
+
+    content = await file.read()
+
+    try:
+        text = content.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        raise HTTPException(
+            status_code=400,
+            detail="CSV moet UTF-8 gecodeerd zijn",
+        )
+
+    try:
+        products = parse_csv(text)
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail=str(exc),
+        )
+
+    return {
+        "filename": file.filename,
+        "product_count": len(products),
+        "preview": products[:5],
+    }
