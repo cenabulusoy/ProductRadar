@@ -357,3 +357,13 @@
   font-size: 12px;
   line-height: 1.4;
 }
+.import-message {
+  margin: 0 0 24px;
+  padding: 14px 18px;
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: 12px;
+  background: rgba(74, 222, 128, 0.08);
+  color: #86efac;
+  font-size: 14px;
+  font-weight: 600;
+}
