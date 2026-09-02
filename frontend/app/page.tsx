@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Filters } from "../components/Filters";
 import { ProductCard } from "../components/ProductCard";
 import { SearchBar } from "../components/SearchBar";
+import { TodaysOpportunities } from "../components/TodaysOpportunities";
 import {
   defaultFilters,
   filterProducts,
@@ -11,7 +12,7 @@ import {
 } from "../lib/filters";
 import { searchProducts } from "../lib/search";
 import { Product } from "../lib/types";
-import { TodaysOpportunities } from "../components/TodaysOpportunities";
+
 type SortOption =
   | "opportunity"
   | "margin"
@@ -31,6 +32,8 @@ export default function Home() {
     useState<SortOption>("opportunity");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [importing, setImporting] = useState(false);
+  const [importMessage, setImportMessage] = useState("");
 
   async function loadProducts() {
     try {
@@ -64,6 +67,41 @@ export default function Home() {
     });
 
     await loadProducts();
+  }
+
+  async function importCsv(file: File) {
+    setImporting(true);
+    setImportMessage("");
+    setError("");
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch(`${API}/products/import`, {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.detail ?? "Importeren is mislukt",
+        );
+      }
+
+      setImportMessage(result.message);
+      await loadProducts();
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Importeren is mislukt",
+      );
+    } finally {
+      setImporting(false);
+    }
   }
 
   const searchedProducts = useMemo(
@@ -172,7 +210,7 @@ export default function Home() {
         <header>
           <div>
             <span className="eyebrow">
-              SPRINT 1 · PRODUCT HUNTER
+              SPRINT 2 · PRODUCT IMPORT
             </span>
 
             <h1>
@@ -180,15 +218,37 @@ export default function Home() {
             </h1>
 
             <p>
-              Zoek, filter en sorteer producten op basis van
-              markt-, winst- en risicoscores.
+              Zoek, filter, sorteer en importeer producten op
+              basis van markt-, winst- en risicoscores.
             </p>
           </div>
 
-          <button className="primary">
-            + Product toevoegen
-          </button>
+          <label className="primary">
+            {importing ? "Importeren..." : "CSV importeren"}
+
+            <input
+              type="file"
+              accept=".csv,text/csv"
+              hidden
+              disabled={importing}
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+
+                if (file) {
+                  void importCsv(file);
+                }
+
+                event.target.value = "";
+              }}
+            />
+          </label>
         </header>
+
+        {importMessage && (
+          <div className="import-message">
+            {importMessage}
+          </div>
+        )}
 
         <div className="stats">
           <div>
@@ -216,7 +276,8 @@ export default function Home() {
             </strong>
           </div>
         </div>
-<TodaysOpportunities products={visibleProducts} />
+
+        <TodaysOpportunities products={visibleProducts} />
 
         <div className="hunter-toolbar">
           <SearchBar
@@ -239,10 +300,18 @@ export default function Home() {
               <option value="opportunity">
                 Hoogste Opportunity Score
               </option>
-              <option value="margin">Hoogste marge</option>
-              <option value="revenue">Hoogste omzet</option>
-              <option value="sales">Meeste verkopen</option>
-              <option value="sellers">Minste aanbieders</option>
+              <option value="margin">
+                Hoogste marge
+              </option>
+              <option value="revenue">
+                Hoogste omzet
+              </option>
+              <option value="sales">
+                Meeste verkopen
+              </option>
+              <option value="sellers">
+                Minste aanbieders
+              </option>
             </select>
           </label>
         </div>
