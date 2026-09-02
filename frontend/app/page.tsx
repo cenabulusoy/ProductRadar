@@ -11,7 +11,7 @@ import {
 } from "../lib/filters";
 import { searchProducts } from "../lib/search";
 import { Product } from "../lib/types";
-
+import { TodaysOpportunities } from "../components/TodaysOpportunities";
 type SortOption =
   | "opportunity"
   | "margin"
@@ -216,6 +216,7 @@ export default function Home() {
             </strong>
           </div>
         </div>
+<TodaysOpportunities products={visibleProducts} />
 
         <div className="hunter-toolbar">
           <SearchBar
