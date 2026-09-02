@@ -36,46 +36,59 @@ export function TodaysOpportunities({ products }: Props) {
       </div>
 
       <div className="opportunity-list">
-        {opportunities.map((product, index) => (
-          <Link
-            href={`/products/${product.id}`}
-            className="opportunity-item"
-            key={product.id}
-          >
-            <div className="opportunity-rank">
-              #{index + 1}
-            </div>
+        {opportunities.map((product, index) => {
+          const reasons = product.analysis.buy_reasons.slice(0, 2);
 
-            <div className="opportunity-product">
-              <strong>{product.name}</strong>
+          return (
+            <Link
+              href={`/products/${product.id}`}
+              className="opportunity-item"
+              key={product.id}
+            >
+              <div className="opportunity-rank">
+                #{index + 1}
+              </div>
 
-              <span>
-                {product.brand} · {product.category}
-              </span>
-            </div>
+              <div className="opportunity-product">
+                <strong>{product.name}</strong>
 
-            <div className="opportunity-metrics">
-              <span>
-                Marge{" "}
+                <span>
+                  {product.brand} · {product.category}
+                </span>
+
+                {reasons.length > 0 && (
+                  <div className="opportunity-reasons">
+                    {reasons.map((reason) => (
+                      <span key={reason}>✓ {reason}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="opportunity-metrics">
+                <span>
+                  Marge{" "}
+                  <strong>
+                    {product.analysis.margin_percent.toFixed(1)}%
+                  </strong>
+                </span>
+
+                <span>
+                  Aanbieders{" "}
+                  <strong>{product.sellers}</strong>
+                </span>
+              </div>
+
+              <div className="opportunity-score">
+                <span>Score</span>
+
                 <strong>
-                  {product.analysis.margin_percent.toFixed(1)}%
+                  {product.analysis.opportunity_score}
                 </strong>
-              </span>
-
-              <span>
-                Aanbieders <strong>{product.sellers}</strong>
-              </span>
-            </div>
-
-            <div className="opportunity-score">
-              <span>Score</span>
-
-              <strong>
-                {product.analysis.opportunity_score}
-              </strong>
-            </div>
-          </Link>
-        ))}
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );

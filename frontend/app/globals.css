@@ -345,3 +345,15 @@
     display: none;
   }
 }
+.opportunity-reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 8px;
+}
+
+.opportunity-reasons span {
+  color: #b8c7d9;
+  font-size: 12px;
+  line-height: 1.4;
+}
