@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { CsvImport } from "../components/CsvImport";
 import { Filters } from "../components/Filters";
 import { ProductCard } from "../components/ProductCard";
 import { SearchBar } from "../components/SearchBar";
@@ -32,8 +33,6 @@ export default function Home() {
     useState<SortOption>("opportunity");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [importing, setImporting] = useState(false);
-  const [importMessage, setImportMessage] = useState("");
 
   async function loadProducts() {
     try {
@@ -67,41 +66,6 @@ export default function Home() {
     });
 
     await loadProducts();
-  }
-
-  async function importCsv(file: File) {
-    setImporting(true);
-    setImportMessage("");
-    setError("");
-
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const response = await fetch(`${API}/products/import`, {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          result.detail ?? "Importeren is mislukt",
-        );
-      }
-
-      setImportMessage(result.message);
-      await loadProducts();
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Importeren is mislukt",
-      );
-    } finally {
-      setImporting(false);
-    }
   }
 
   const searchedProducts = useMemo(
@@ -223,32 +187,9 @@ export default function Home() {
             </p>
           </div>
 
-          <label className="primary">
-            {importing ? "Importeren..." : "CSV importeren"}
-
-            <input
-              type="file"
-              accept=".csv,text/csv"
-              hidden
-              disabled={importing}
-              onChange={(event) => {
-                const file = event.target.files?.[0];
-
-                if (file) {
-                  void importCsv(file);
-                }
-
-                event.target.value = "";
-              }}
-            />
-          </label>
         </header>
 
-        {importMessage && (
-          <div className="import-message">
-            {importMessage}
-          </div>
-        )}
+        <CsvImport api={API} onImported={loadProducts} />
 
         <div className="stats">
           <div>

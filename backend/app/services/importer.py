@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import math
 from io import StringIO
 
 
@@ -18,7 +19,10 @@ def parse_csv(content: str) -> list[dict]:
     if not reader.fieldnames:
         raise ValueError("CSV bevat geen kolomnamen")
 
-    columns = {column.strip() for column in reader.fieldnames}
+    reader.fieldnames = [column.strip() for column in reader.fieldnames]
+    if len(set(reader.fieldnames)) != len(reader.fieldnames):
+        raise ValueError("CSV bevat dubbele kolomnamen")
+    columns = set(reader.fieldnames)
 
     missing = REQUIRED_COLUMNS - columns
 
@@ -31,6 +35,8 @@ def parse_csv(content: str) -> list[dict]:
     products: list[dict] = []
 
     for row_number, row in enumerate(reader, start=2):
+        if None in row:
+            raise ValueError(f"Regel {row_number}: te veel waarden voor de kolommen")
         name = (row.get("name") or "").strip()
         category = (row.get("category") or "").strip()
 
@@ -81,6 +87,10 @@ def parse_csv(content: str) -> list[dict]:
             raise ValueError(
                 f"Regel {row_number}: ongeldige numerieke waarde"
             )
+
+        if any(isinstance(value, float) and not math.isfinite(value)
+               for value in product.values()):
+            raise ValueError(f"Regel {row_number}: ongeldige numerieke waarde")
 
         products.append(product)
 
