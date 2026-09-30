@@ -1,0 +1,520 @@
+[
+  {
+    "input": {
+      "name": "WD-40 Smart Straw 400 ml",
+      "category": "Automotive",
+      "brand": "WD-40",
+      "sale_price": 14.95,
+      "purchase_price": 7.1,
+      "shipping_cost": 4.25,
+      "commission_rate": 15,
+      "monthly_sales_low": 170,
+      "monthly_sales_high": 260,
+      "sellers": 18,
+      "reviews": 1840,
+      "review_growth": 3.8,
+      "trend": 6.0,
+      "risk_level": 38,
+      "confidence": 68
+    },
+    "expected": {
+      "average_monthly_sales": 215,
+      "monthly_revenue": 3214.25,
+      "net_profit_per_unit": 1.36,
+      "margin_percent": 9.1,
+      "roi_percent": 19.1,
+      "market_score": 70,
+      "profit_score": 25,
+      "risk_score": 64,
+      "opportunity_score": 53,
+      "demand_score": 100,
+      "competition_score": 12,
+      "trend_score": 82,
+      "margin_score": 20,
+      "roi_score": 8,
+      "capital_efficiency_score": 84,
+      "confidence_score": 68,
+      "verdict": "Twijfel",
+      "verdict_detail": "Alleen doorgaan wanneer je een duidelijk prijs- of productvoordeel hebt.",
+      "buy_reasons": [
+        "Sterke geschatte vraag",
+        "Positieve markttrend"
+      ],
+      "avoid_reasons": [
+        "Veel actieve aanbieders",
+        "Hoge reviewbarrière",
+        "Beperkte winstmarge",
+        "Lage opbrengst ten opzichte van de inkoop"
+      ],
+      "product_dna": [
+        {
+          "key": "repeat_purchase",
+          "label": "Herhaalaankopen",
+          "score": 85,
+          "stars": 4
+        },
+        {
+          "key": "shipping_ease",
+          "label": "Verzendgemak",
+          "score": 66,
+          "stars": 3
+        },
+        {
+          "key": "private_label",
+          "label": "Private-label potentieel",
+          "score": 16,
+          "stars": 1
+        },
+        {
+          "key": "return_risk",
+          "label": "Laag retourrisico",
+          "score": 62,
+          "stars": 3
+        },
+        {
+          "key": "cashflow",
+          "label": "Cashflow",
+          "score": 42,
+          "stars": 2
+        },
+        {
+          "key": "stability",
+          "label": "Marktstabiliteit",
+          "score": 100,
+          "stars": 5
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "name": "Werkhandschoenen nitril 12 paar",
+      "category": "Gereedschap",
+      "brand": "ProGrip",
+      "sale_price": 24.95,
+      "purchase_price": 9.8,
+      "shipping_cost": 4.25,
+      "commission_rate": 15,
+      "monthly_sales_low": 110,
+      "monthly_sales_high": 190,
+      "sellers": 11,
+      "reviews": 426,
+      "review_growth": 5.2,
+      "trend": 8.0,
+      "risk_level": 32,
+      "confidence": 62
+    },
+    "expected": {
+      "average_monthly_sales": 150,
+      "monthly_revenue": 3742.5,
+      "net_profit_per_unit": 7.16,
+      "margin_percent": 28.7,
+      "roi_percent": 73.0,
+      "market_score": 81,
+      "profit_score": 53,
+      "risk_score": 66,
+      "opportunity_score": 68,
+      "demand_score": 93,
+      "competition_score": 53,
+      "trend_score": 92,
+      "margin_score": 63,
+      "roi_score": 29,
+      "capital_efficiency_score": 78,
+      "confidence_score": 62,
+      "verdict": "Onderzoeken",
+      "verdict_detail": "Interessant, maar controleer prijsdruk, leverancier en echte marktvraag.",
+      "buy_reasons": [
+        "Sterke geschatte vraag",
+        "Gezonde geschatte marge van 28.7%",
+        "Sterke geschatte ROI van 73%",
+        "Positieve markttrend",
+        "Relatief laag product- en retourrisico"
+      ],
+      "avoid_reasons": [
+        "Geen zwaar risico zichtbaar in de huidige invoer"
+      ],
+      "product_dna": [
+        {
+          "key": "repeat_purchase",
+          "label": "Herhaalaankopen",
+          "score": 91,
+          "stars": 5
+        },
+        {
+          "key": "shipping_ease",
+          "label": "Verzendgemak",
+          "score": 66,
+          "stars": 3
+        },
+        {
+          "key": "private_label",
+          "label": "Private-label potentieel",
+          "score": 58,
+          "stars": 3
+        },
+        {
+          "key": "return_risk",
+          "label": "Laag retourrisico",
+          "score": 68,
+          "stars": 3
+        },
+        {
+          "key": "cashflow",
+          "label": "Cashflow",
+          "score": 51,
+          "stars": 3
+        },
+        {
+          "key": "stability",
+          "label": "Marktstabiliteit",
+          "score": 96,
+          "stars": 5
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "name": "EHBO-kit DIN 13164",
+      "category": "Automotive",
+      "brand": "SafeRoad",
+      "sale_price": 19.95,
+      "purchase_price": 7.25,
+      "shipping_cost": 4.25,
+      "commission_rate": 15,
+      "monthly_sales_low": 95,
+      "monthly_sales_high": 155,
+      "sellers": 8,
+      "reviews": 318,
+      "review_growth": 4.1,
+      "trend": 4.0,
+      "risk_level": 24,
+      "confidence": 65
+    },
+    "expected": {
+      "average_monthly_sales": 125,
+      "monthly_revenue": 2493.75,
+      "net_profit_per_unit": 5.46,
+      "margin_percent": 27.4,
+      "roi_percent": 75.3,
+      "market_score": 70,
+      "profit_score": 53,
+      "risk_score": 73,
+      "opportunity_score": 65,
+      "demand_score": 72,
+      "competition_score": 65,
+      "trend_score": 74,
+      "margin_score": 60,
+      "roi_score": 30,
+      "capital_efficiency_score": 84,
+      "confidence_score": 65,
+      "verdict": "Onderzoeken",
+      "verdict_detail": "Interessant, maar controleer prijsdruk, leverancier en echte marktvraag.",
+      "buy_reasons": [
+        "Sterke geschatte vraag",
+        "Concurrentie lijkt beheersbaar",
+        "Gezonde geschatte marge van 27.4%",
+        "Sterke geschatte ROI van 75%",
+        "Positieve markttrend",
+        "Relatief laag product- en retourrisico"
+      ],
+      "avoid_reasons": [
+        "Geen zwaar risico zichtbaar in de huidige invoer"
+      ],
+      "product_dna": [
+        {
+          "key": "repeat_purchase",
+          "label": "Herhaalaankopen",
+          "score": 86,
+          "stars": 4
+        },
+        {
+          "key": "shipping_ease",
+          "label": "Verzendgemak",
+          "score": 66,
+          "stars": 3
+        },
+        {
+          "key": "private_label",
+          "label": "Private-label potentieel",
+          "score": 63,
+          "stars": 3
+        },
+        {
+          "key": "return_risk",
+          "label": "Laag retourrisico",
+          "score": 76,
+          "stars": 4
+        },
+        {
+          "key": "cashflow",
+          "label": "Cashflow",
+          "score": 54,
+          "stars": 3
+        },
+        {
+          "key": "stability",
+          "label": "Marktstabiliteit",
+          "score": 100,
+          "stars": 5
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "name": "Ventieldoppenset aluminium 4-delig",
+      "category": "Automotive",
+      "brand": "RoadStyle",
+      "sale_price": 12.95,
+      "purchase_price": 2.1,
+      "shipping_cost": 3.95,
+      "commission_rate": 15,
+      "monthly_sales_low": 70,
+      "monthly_sales_high": 150,
+      "sellers": 23,
+      "reviews": 205,
+      "review_growth": 6.8,
+      "trend": 10.0,
+      "risk_level": 58,
+      "confidence": 55
+    },
+    "expected": {
+      "average_monthly_sales": 110,
+      "monthly_revenue": 1424.5,
+      "net_profit_per_unit": 4.96,
+      "margin_percent": 38.3,
+      "roi_percent": 236.1,
+      "market_score": 69,
+      "profit_score": 89,
+      "risk_score": 45,
+      "opportunity_score": 71,
+      "demand_score": 86,
+      "competition_score": 21,
+      "trend_score": 100,
+      "margin_score": 84,
+      "roi_score": 94,
+      "capital_efficiency_score": 95,
+      "confidence_score": 55,
+      "verdict": "Onderzoeken",
+      "verdict_detail": "Interessant, maar controleer prijsdruk, leverancier en echte marktvraag.",
+      "buy_reasons": [
+        "Sterke geschatte vraag",
+        "Gezonde geschatte marge van 38.3%",
+        "Sterke geschatte ROI van 236%",
+        "Positieve markttrend"
+      ],
+      "avoid_reasons": [
+        "Veel actieve aanbieders",
+        "Verhoogd product- of retourrisico",
+        "Analyse heeft nog weinig betrouwbare meetdata"
+      ],
+      "product_dna": [
+        {
+          "key": "repeat_purchase",
+          "label": "Herhaalaankopen",
+          "score": 94,
+          "stars": 5
+        },
+        {
+          "key": "shipping_ease",
+          "label": "Verzendgemak",
+          "score": 68,
+          "stars": 3
+        },
+        {
+          "key": "private_label",
+          "label": "Private-label potentieel",
+          "score": 49,
+          "stars": 2
+        },
+        {
+          "key": "return_risk",
+          "label": "Laag retourrisico",
+          "score": 42,
+          "stars": 2
+        },
+        {
+          "key": "cashflow",
+          "label": "Cashflow",
+          "score": 94,
+          "stars": 5
+        },
+        {
+          "key": "stability",
+          "label": "Marktstabiliteit",
+          "score": 91,
+          "stars": 5
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "name": "Automattenset universeel 4-delig",
+      "category": "Automotive",
+      "brand": "AutoFit",
+      "sale_price": 34.95,
+      "purchase_price": 14.4,
+      "shipping_cost": 6.95,
+      "commission_rate": 15,
+      "monthly_sales_low": 45,
+      "monthly_sales_high": 90,
+      "sellers": 14,
+      "reviews": 167,
+      "review_growth": 2.3,
+      "trend": 1.0,
+      "risk_level": 47,
+      "confidence": 52
+    },
+    "expected": {
+      "average_monthly_sales": 68,
+      "monthly_revenue": 2359.12,
+      "net_profit_per_unit": 8.36,
+      "margin_percent": 23.9,
+      "roi_percent": 58.0,
+      "market_score": 46,
+      "profit_score": 45,
+      "risk_score": 53,
+      "opportunity_score": 47,
+      "demand_score": 38,
+      "competition_score": 50,
+      "trend_score": 59,
+      "margin_score": 53,
+      "roi_score": 23,
+      "capital_efficiency_score": 68,
+      "confidence_score": 52,
+      "verdict": "Niet inkopen",
+      "verdict_detail": "De huidige verhouding tussen vraag, winst en risico is onvoldoende.",
+      "buy_reasons": [
+        "Gezonde geschatte marge van 23.9%"
+      ],
+      "avoid_reasons": [
+        "Analyse heeft nog weinig betrouwbare meetdata"
+      ],
+      "product_dna": [
+        {
+          "key": "repeat_purchase",
+          "label": "Herhaalaankopen",
+          "score": 68,
+          "stars": 3
+        },
+        {
+          "key": "shipping_ease",
+          "label": "Verzendgemak",
+          "score": 44,
+          "stars": 2
+        },
+        {
+          "key": "private_label",
+          "label": "Private-label potentieel",
+          "score": 51,
+          "stars": 3
+        },
+        {
+          "key": "return_risk",
+          "label": "Laag retourrisico",
+          "score": 53,
+          "stars": 3
+        },
+        {
+          "key": "cashflow",
+          "label": "Cashflow",
+          "score": 43,
+          "stars": 2
+        },
+        {
+          "key": "stability",
+          "label": "Marktstabiliteit",
+          "score": 100,
+          "stars": 5
+        }
+      ]
+    }
+  },
+  {
+    "input": {
+      "monthly_sales_low": 100,
+      "monthly_sales_high": 200,
+      "sale_price": 29.95,
+      "purchase_price": 10.0,
+      "shipping_cost": 4.25,
+      "commission_rate": 15,
+      "review_growth": 4,
+      "trend": 5,
+      "sellers": 8,
+      "reviews": 250,
+      "risk_level": 30,
+      "confidence": 70
+    },
+    "expected": {
+      "average_monthly_sales": 150,
+      "monthly_revenue": 4492.5,
+      "net_profit_per_unit": 11.21,
+      "margin_percent": 37.4,
+      "roi_percent": 112.1,
+      "market_score": 78,
+      "profit_score": 68,
+      "risk_score": 70,
+      "opportunity_score": 73,
+      "demand_score": 84,
+      "competition_score": 67,
+      "trend_score": 78,
+      "margin_score": 82,
+      "roi_score": 45,
+      "capital_efficiency_score": 78,
+      "confidence_score": 70,
+      "verdict": "Onderzoeken",
+      "verdict_detail": "Interessant, maar controleer prijsdruk, leverancier en echte marktvraag.",
+      "buy_reasons": [
+        "Sterke geschatte vraag",
+        "Concurrentie lijkt beheersbaar",
+        "Gezonde geschatte marge van 37.4%",
+        "Sterke geschatte ROI van 112%",
+        "Positieve markttrend",
+        "Relatief laag product- en retourrisico"
+      ],
+      "avoid_reasons": [
+        "Geen zwaar risico zichtbaar in de huidige invoer"
+      ],
+      "product_dna": [
+        {
+          "key": "repeat_purchase",
+          "label": "Herhaalaankopen",
+          "score": 86,
+          "stars": 4
+        },
+        {
+          "key": "shipping_ease",
+          "label": "Verzendgemak",
+          "score": 66,
+          "stars": 3
+        },
+        {
+          "key": "private_label",
+          "label": "Private-label potentieel",
+          "score": 74,
+          "stars": 4
+        },
+        {
+          "key": "return_risk",
+          "label": "Laag retourrisico",
+          "score": 70,
+          "stars": 4
+        },
+        {
+          "key": "cashflow",
+          "label": "Cashflow",
+          "score": 60,
+          "stars": 3
+        },
+        {
+          "key": "stability",
+          "label": "Marktstabiliteit",
+          "score": 100,
+          "stars": 5
+        }
+      ]
+    }
+  }
+]
