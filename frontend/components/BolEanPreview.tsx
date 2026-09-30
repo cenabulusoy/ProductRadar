@@ -1,11 +1,14 @@
 "use client";
 
+import { BolMarket, MarketMeasurement } from "./BolMarket";
+
 import { BolSnapshots } from "./BolSnapshots";
 
 import { FormEvent, useRef, useState } from "react";
 
 type Preview = {
   preview_id?: string;
+  market?: MarketMeasurement;
   ean: string; source: string; fetched_at: string; language: string;
   catalog: { title: string | null; brand: string | null; classification_id: string | null;
     published: boolean | null; enrichment: number | null };
@@ -74,6 +77,7 @@ export function BolEanPreview({ api }: { api: string }) {
       </dl>
       <p>Bron: {preview.source}. Opgehaald: {new Date(preview.fetched_at).toLocaleString("nl-NL")}.</p>
       <p>Aantal en gemiddelde zijn berekend uit de sterrenverdeling van bol. Dit zijn geen verkoopaantallen.</p>
+      <BolMarket market={preview.market} />
       {preview.warnings.map((warning, index) => <p role="alert" key={index}>{warning}</p>)}
     </div>}
     {!loading && <BolSnapshots key={`${ean}:${preview?.preview_id ?? ""}`} api={api} ean={ean} previewId={preview?.preview_id} />}

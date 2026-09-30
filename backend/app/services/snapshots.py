@@ -61,6 +61,20 @@ def migrate_snapshots(db):
     db.execute("""CREATE INDEX IF NOT EXISTS bol_snapshots_ean_measured
                   ON bol_product_snapshots(ean, measured_at DESC, id DESC)""")
 
+    db.execute("""CREATE TABLE IF NOT EXISTS bol_market_snapshots (
+        snapshot_id INTEGER PRIMARY KEY REFERENCES bol_product_snapshots(id),
+        ean TEXT NOT NULL REFERENCES bol_product_identities(ean),
+        measured_at TEXT NOT NULL,
+        source TEXT NOT NULL,
+        api_version TEXT NOT NULL,
+        country TEXT NOT NULL,
+        condition TEXT NOT NULL,
+        status TEXT NOT NULL CHECK(status IN ('complete', 'partial', 'unavailable')),
+        payload TEXT NOT NULL
+    )""")
+    db.execute("""CREATE INDEX IF NOT EXISTS bol_market_ean_segment_time
+                  ON bol_market_snapshots(ean, country, condition, measured_at DESC)""")
+
 
 def serialize(row):
     return {"id": row["id"], "saved_at": row["saved_at"],
@@ -89,6 +103,14 @@ def save_snapshot(receipt):
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
                 (receipt, preview["ean"], preview["fetched_at"], now, preview["source"],
                  preview["api_version"], preview["status"], json.dumps(preview, ensure_ascii=False)))
+            market = preview.get("market")
+            if market is not None:
+                db.execute("""INSERT INTO bol_market_snapshots
+                    (snapshot_id, ean, measured_at, source, api_version, country, condition, status, payload)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                    (cursor.lastrowid, preview["ean"], market["measured_at"], market["source"],
+                     market["api_version"], market["country"], market["condition"], market["status"],
+                     json.dumps(market, ensure_ascii=False)))
             row = db.execute("SELECT * FROM bol_product_snapshots WHERE id = ?", (cursor.lastrowid,)).fetchone()
             return serialize(row)
     except sqlite3.Error:

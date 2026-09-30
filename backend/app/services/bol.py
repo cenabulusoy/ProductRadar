@@ -110,10 +110,10 @@ class BolClient:
             self._expires = self.clock() + ttl - min(30, ttl / 10)
             return token
 
-    def _get(self, path):
+    def _get(self, path, params=None):
         for attempt in range(2):
             token = self._access_token()
-            response = self._request("GET", "https://api.bol.com/retailer/" + path,
+            response = self._request("GET", "https://api.bol.com/retailer/" + path, params=params,
                                      headers={"Authorization": "Bearer " + token,
                                               "Accept": "application/vnd.retailer.v10+json",
                                               "Accept-Language": "nl"})
@@ -172,6 +172,8 @@ class BolClient:
         except BolError as exc:
             ratings_status = {"status": "unavailable", "error_code": exc.status}
             warnings.append("Beoordelingen niet beschikbaar. " + str(exc))
+        from app.services.market import measure_market
+        market = measure_market(self, ean)
         gpc = product.get("gpc")
         enrichment = product.get("enrichment")
         return {"ean": ean, "source": "bol Retailer API v10", "language": "nl",
@@ -181,7 +183,7 @@ class BolClient:
                             "published": product.get("published") if type(product.get("published")) is bool else None,
                             "enrichment": enrichment.get("status") if isinstance(enrichment, dict) and type(enrichment.get("status")) is int else None},
                 "bol_product_id": self._text(product.get("productId")),
-                "api_version": "v10", "status": "complete" if ratings is not None else "partial",
+                "api_version": "v10", "status": "complete" if ratings is not None and market["status"] == "complete" else "partial",
                 "endpoints": {"catalog": {"path": "content/catalog-products/{ean}", "version": "v10", "status": "ok", "error_code": None},
                               "ratings": {"path": "products/{ean}/ratings", "version": "v10", **ratings_status}},
                 "field_completeness": {"title": attribute("Title") is not None,
@@ -190,4 +192,4 @@ class BolClient:
                                        "ratings": ratings is not None},
                 "data_kinds": {"catalog": "official_bol", "rating_distribution": "official_bol",
                                "rating_count_and_average": "derived_productradar"},
-                "ratings": ratings, "warnings": warnings}
+                "ratings": ratings, "warnings": warnings, "market": market}

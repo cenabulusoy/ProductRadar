@@ -1,10 +1,13 @@
 "use client";
 
+import { BolMarket, MarketMeasurement } from "./BolMarket";
+
 import { useRef, useState } from "react";
 
 type Snapshot = {
   id: number; saved_at: string;
   preview: {
+    market?: MarketMeasurement;
     ean: string; source: string; api_version: string; fetched_at: string;
     status: string; bol_product_id: string | null;
     catalog: { title: string | null };
@@ -59,10 +62,11 @@ export function BolSnapshots({ api, ean, previewId }: { api: string; ean: string
       <p>Bron: {snapshot.preview.source}. Gemeten: {new Date(snapshot.preview.fetched_at).toLocaleString("nl-NL")}.
         {" "}Ouderdom bij weergave: {Math.max(0, Math.floor((Date.now() - Date.parse(snapshot.preview.fetched_at)) / 60000))} minuten.
         {" "}Opgeslagen: {new Date(snapshot.saved_at).toLocaleString("nl-NL")}.</p>
-      <p>{snapshot.preview.status === "complete" ? "Beide bronnen opgehaald" : "Gedeeltelijke meting"}.
+      <p>{snapshot.preview.status === "complete" ? "Bronnen van deze meting opgehaald" : "Gedeeltelijke meting"}.
         {" "}Bol-product-ID: {snapshot.preview.bol_product_id ?? "Niet beschikbaar"}.</p>
       <p>Beoordelingen: {snapshot.preview.ratings?.count ?? "Niet beschikbaar"};
         {" "}gemiddelde: {snapshot.preview.ratings?.average ?? "Niet beschikbaar"} (berekend uit bol-sterrenverdeling).</p>
+      <BolMarket market={snapshot.preview.market} />
       {snapshot.preview.warnings.map((warning, index) => <p key={index}>{warning}</p>)}
     </li>)}</ul>
   </section>;

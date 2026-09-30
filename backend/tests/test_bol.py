@@ -35,6 +35,8 @@ def setup_client(handler=None, settings=None, clock=None):
         assert request.method == 'GET'
         assert request.headers['authorization'] == 'Bearer ' + TOKEN
         assert request.headers['accept'] == 'application/vnd.retailer.v10+json'
+        if request.url.path.endswith('/offers'):
+            return httpx.Response(200, json={'offers': []})
         return httpx.Response(200, json=CATALOG if 'catalog-products' in request.url.path else RATINGS)
 
     kwargs = {'clock': clock} if clock else {}
