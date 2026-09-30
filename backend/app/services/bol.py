@@ -151,6 +151,7 @@ class BolClient:
             return None
 
         warnings, ratings = [], None
+        ratings_status = {"status": "ok", "error_code": None}
         try:
             body = self._get("products/" + ean + "/ratings")
             distribution = body.get("ratings")
@@ -169,6 +170,7 @@ class BolClient:
                        "count": total,
                        "average": round(sum(star * count for star, count in buckets.items()) / total, 2) if total else None}
         except BolError as exc:
+            ratings_status = {"status": "unavailable", "error_code": exc.status}
             warnings.append("Beoordelingen niet beschikbaar. " + str(exc))
         gpc = product.get("gpc")
         enrichment = product.get("enrichment")
@@ -178,4 +180,14 @@ class BolClient:
                             "classification_id": self._text(gpc.get("chunkId")) if isinstance(gpc, dict) else None,
                             "published": product.get("published") if type(product.get("published")) is bool else None,
                             "enrichment": enrichment.get("status") if isinstance(enrichment, dict) and type(enrichment.get("status")) is int else None},
+                "bol_product_id": self._text(product.get("productId")),
+                "api_version": "v10", "status": "complete" if ratings is not None else "partial",
+                "endpoints": {"catalog": {"path": "content/catalog-products/{ean}", "version": "v10", "status": "ok", "error_code": None},
+                              "ratings": {"path": "products/{ean}/ratings", "version": "v10", **ratings_status}},
+                "field_completeness": {"title": attribute("Title") is not None,
+                                       "brand": attribute("Brand") is not None,
+                                       "classification": isinstance(gpc, dict) and self._text(gpc.get("chunkId")) is not None,
+                                       "ratings": ratings is not None},
+                "data_kinds": {"catalog": "official_bol", "rating_distribution": "official_bol",
+                               "rating_count_and_average": "derived_productradar"},
                 "ratings": ratings, "warnings": warnings}

@@ -1,8 +1,11 @@
 "use client";
 
+import { BolSnapshots } from "./BolSnapshots";
+
 import { FormEvent, useRef, useState } from "react";
 
 type Preview = {
+  preview_id?: string;
   ean: string; source: string; fetched_at: string; language: string;
   catalog: { title: string | null; brand: string | null; classification_id: string | null;
     published: boolean | null; enrichment: number | null };
@@ -59,7 +62,7 @@ export function BolEanPreview({ api }: { api: string }) {
     </form>
     {error && <p role="alert" className="error">{error}</p>}
     {preview && <div>
-      <p role="status">Gegevens opgehaald voor {preview.ean}. Er is niets opgeslagen.</p>
+      <p role="status">Gegevens opgehaald voor {preview.ean}. Ophalen slaat niets automatisch op.</p>
       <dl className="bol-preview-details">
         <dt>Product</dt><dd>{preview.catalog.title ?? "Niet beschikbaar"}</dd>
         <dt>Merk</dt><dd>{preview.catalog.brand ?? "Niet beschikbaar"}</dd>
@@ -73,5 +76,6 @@ export function BolEanPreview({ api }: { api: string }) {
       <p>Aantal en gemiddelde zijn berekend uit de sterrenverdeling van bol. Dit zijn geen verkoopaantallen.</p>
       {preview.warnings.map((warning, index) => <p role="alert" key={index}>{warning}</p>)}
     </div>}
+    {!loading && <BolSnapshots key={`${ean}:${preview?.preview_id ?? ""}`} api={api} ean={ean} previewId={preview?.preview_id} />}
   </section>;
 }

@@ -10,6 +10,8 @@ from app.core.database import init_db
 app = FastAPI(title="ProductRadar API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
  allow_origins=[
     "http://localhost:3000",
     "http://127.0.0.1:3000",

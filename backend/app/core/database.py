@@ -9,12 +9,17 @@ DB_PATH = Path(__file__).resolve().parents[2] / "data" / "productradar.db"
 def get_connection() -> sqlite3.Connection:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     connection = sqlite3.connect(DB_PATH)
+    connection.execute("PRAGMA foreign_keys = ON")
     connection.row_factory = sqlite3.Row
     return connection
 
 
 def init_db() -> None:
+    from app.services.snapshots import migrate_snapshots
+
     with get_connection() as db:
+        db.execute("BEGIN IMMEDIATE")
+        migrate_snapshots(db)
         db.execute(
             """
             CREATE TABLE IF NOT EXISTS products (

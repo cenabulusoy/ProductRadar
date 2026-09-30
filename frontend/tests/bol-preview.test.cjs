@@ -33,7 +33,7 @@ test('EAN preview only fetches read-only endpoint and renders data as text', asy
   assert.equal(calls[0].options.cache, 'no-store');
   assert.equal(calls[0].options.method, undefined);
   assert.equal(tree.root.findAllByType('script').length, 0);
-  assert.match(JSON.stringify(tree.toJSON()), /Er is niets opgeslagen/);
+  assert.match(JSON.stringify(tree.toJSON()), /Ophalen slaat niets automatisch op/);
   input('0000000000000');
   assert.equal(tree.root.findAllByProps({ role: 'status' }).length, 0);
 });
