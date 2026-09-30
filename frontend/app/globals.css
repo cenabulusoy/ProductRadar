@@ -373,3 +373,9 @@
 .csv-preview caption{text-align:left;padding:12px 0;color:#91a3ba}.csv-preview th,.csv-preview td{padding:12px;border-bottom:1px solid #263950}
 .csv-actions{display:flex;gap:12px;flex-wrap:wrap}.csv-actions button:not(.primary){padding:12px 18px;border:1px solid #91a3ba;border-radius:10px;background:#102039;color:white;cursor:pointer}
 .csv-import button:disabled{opacity:.55;cursor:wait}.csv-import button:focus-visible,.csv-table-scroll:focus-visible{outline:2px solid #55d6b3;outline-offset:4px}
+
+.bol-preview{padding:22px;margin:24px 0;overflow-wrap:anywhere}.bol-preview h2{margin-top:0}
+.bol-preview-form{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.bol-preview-form input{padding:12px;border:1px solid #91a3ba;border-radius:10px;background:#0a1726;color:white;max-width:100%}
+.bol-preview-details{display:grid;grid-template-columns:minmax(140px,1fr) 2fr;gap:10px}.bol-preview-details dd{margin:0}.bol-preview-details dt{color:#91a3ba}
+.bol-preview button:disabled{opacity:.55;cursor:wait}.bol-preview :focus-visible{outline:2px solid #55d6b3;outline-offset:4px}
+@media(max-width:600px){.bol-preview-details{grid-template-columns:1fr}.bol-preview-details dd{margin-bottom:10px}}

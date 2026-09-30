@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { BolEanPreview } from "../components/BolEanPreview";
 import { CsvImport } from "../components/CsvImport";
 import { Filters } from "../components/Filters";
 import { ProductCard } from "../components/ProductCard";
@@ -190,6 +191,7 @@ export default function Home() {
         </header>
 
         <CsvImport api={API} onImported={loadProducts} />
+        <BolEanPreview api={API} />
 
         <div className="stats">
           <div>
