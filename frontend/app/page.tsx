@@ -159,7 +159,7 @@ export default function Home() {
         <nav>
           <a className="active">Dashboard</a>
           <a>Product Hunter</a>
-          <a>Vergelijken</a>
+          <a href="/comparison">Vergelijken · v1/v2</a>
           <a>Projecten</a>
           <a>Instellingen</a>
         </nav>

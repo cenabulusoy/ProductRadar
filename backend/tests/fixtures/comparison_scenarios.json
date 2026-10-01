@@ -1,0 +1,1130 @@
+[
+  {
+    "scenario": "agreement",
+    "comparison": {
+      "product": {
+        "id": 1,
+        "name": "Fictief vergelijkingsproduct",
+        "ean": "4006381333931",
+        "category": "Acceptatietest"
+      },
+      "evaluated_at": "2026-10-01T12:00:00+00:00",
+      "default_engine": "v1",
+      "analysis_v1": {
+        "average_monthly_sales": 900,
+        "monthly_revenue": 35955.0,
+        "net_profit_per_unit": 29.96,
+        "margin_percent": 75.0,
+        "roi_percent": 998.5,
+        "market_score": 98,
+        "profit_score": 99,
+        "risk_score": 90,
+        "opportunity_score": 97,
+        "demand_score": 100,
+        "competition_score": 94,
+        "trend_score": 100,
+        "margin_score": 100,
+        "roi_score": 100,
+        "capital_efficiency_score": 93,
+        "confidence_score": 90,
+        "verdict": "Kansrijk",
+        "verdict_detail": "Sterke kandidaat voor verdere leveranciers- en marktvalidatie.",
+        "buy_reasons": [
+          "Sterke geschatte vraag",
+          "Concurrentie lijkt beheersbaar",
+          "Gezonde geschatte marge van 75.0%",
+          "Sterke geschatte ROI van 999%",
+          "Positieve markttrend",
+          "Relatief laag product- en retourrisico"
+        ],
+        "avoid_reasons": [
+          "Geen zwaar risico zichtbaar in de huidige invoer"
+        ],
+        "product_dna": [
+          {
+            "key": "repeat_purchase",
+            "label": "Herhaalaankopen",
+            "score": 100,
+            "stars": 5
+          },
+          {
+            "key": "shipping_ease",
+            "label": "Verzendgemak",
+            "score": 76,
+            "stars": 4
+          },
+          {
+            "key": "private_label",
+            "label": "Private-label potentieel",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "return_risk",
+            "label": "Laag retourrisico",
+            "score": 90,
+            "stars": 4
+          },
+          {
+            "key": "cashflow",
+            "label": "Cashflow",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "stability",
+            "label": "Marktstabiliteit",
+            "score": 98,
+            "stars": 5
+          }
+        ]
+      },
+      "analysis_v2": {
+        "decision_engine_version": "2.0.0-scoring.1",
+        "score_config_version": "scoring-nl-new-1",
+        "analysis_id": "e4caeed5f8ed281f7f02d56725954c04a341813bb429a04b42d4a37259192500",
+        "status": "complete",
+        "subscores": {
+          "demand": 100.0,
+          "competition": 67.54529031342297,
+          "profitability": 100.0,
+          "risk": 20.0,
+          "data_confidence": 84.50000000000001
+        },
+        "opportunity_score": 79.9590580626846,
+        "verdict": "Kansrijk",
+        "verdict_reason": "all_readiness_conditions_met",
+        "safeguards": [],
+        "positive_drivers": [
+          {
+            "code": "profitability",
+            "label": "Bijdrage, marge en voorraad-ROI",
+            "points_vs_neutral": 18.0,
+            "score": 100.0,
+            "quality": 0.9
+          },
+          {
+            "code": "demand",
+            "label": "Vraagsignaal",
+            "points_vs_neutral": 7.5,
+            "score": 100.0,
+            "quality": 0.6
+          },
+          {
+            "code": "risk",
+            "label": "Operationeel, kwaliteits- en prijsrisico",
+            "points_vs_neutral": 4.049999999999999,
+            "score": 20.0,
+            "quality": 0.9
+          },
+          {
+            "code": "competition",
+            "label": "Concurrentie en leverpositie",
+            "points_vs_neutral": 3.509058062684595,
+            "score": 67.54529031342297,
+            "quality": 1.0
+          }
+        ],
+        "negative_drivers": [],
+        "missing_critical_inputs": [],
+        "unknown_signals": [],
+        "readiness_missing": []
+      },
+      "market": {
+        "snapshot_id": 3,
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "age_hours": 0.0,
+        "freshness": "fresh",
+        "source": "bol Retailer API",
+        "api_version": "v10",
+        "status": "complete",
+        "price_min": 24.2,
+        "price_max": 24.2,
+        "unique_seller_count": 3,
+        "offer_count": 3,
+        "data_kind": "official_measured",
+        "counts_kind": "derived"
+      },
+      "legacy_inputs": [
+        {
+          "field": "sale_price",
+          "label": "Geplande verkoopprijs",
+          "value": 39.95,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "purchase_price",
+          "label": "Inkoopprijs",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "shipping_cost",
+          "label": "Verzendkosten",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "commission_rate",
+          "label": "Legacy commissiepercentage",
+          "value": 10,
+          "unit": "%",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_low",
+          "label": "Ondergrens geschatte maandverkopen",
+          "value": 800,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_high",
+          "label": "Bovengrens geschatte maandverkopen",
+          "value": 1000,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        }
+      ],
+      "primary_reason": {
+        "code": "agreement",
+        "text": "Beide engines geven hetzelfde verdict; formules en bewijsbasis verschillen."
+      },
+      "input_notice": "De v2-berekening gebruikt expliciete financiële bewijsgegevens. De legacy-bedragen hieronder kunnen andere definities hebben en worden niet automatisch als v2-invoer behandeld. Verkoopranges zonder vastgelegde scope of methode worden niet automatisch als v2-vraagbewijs gebruikt.",
+      "difference_notice": "De hoofdreden is een samenvatting van bewijs en safeguards; geen exacte causale uitsplitsing van het scoreverschil."
+    }
+  },
+  {
+    "scenario": "poor_profitability",
+    "comparison": {
+      "product": {
+        "id": 1,
+        "name": "Fictief vergelijkingsproduct",
+        "ean": "4006381333931",
+        "category": "Acceptatietest"
+      },
+      "evaluated_at": "2026-10-01T12:00:00+00:00",
+      "default_engine": "v1",
+      "analysis_v1": {
+        "average_monthly_sales": 900,
+        "monthly_revenue": 35955.0,
+        "net_profit_per_unit": 17.96,
+        "margin_percent": 44.9,
+        "roi_percent": 119.7,
+        "market_score": 98,
+        "profit_score": 76,
+        "risk_score": 90,
+        "opportunity_score": 89,
+        "demand_score": 100,
+        "competition_score": 94,
+        "trend_score": 100,
+        "margin_score": 99,
+        "roi_score": 48,
+        "capital_efficiency_score": 67,
+        "confidence_score": 90,
+        "verdict": "Kansrijk",
+        "verdict_detail": "Sterke kandidaat voor verdere leveranciers- en marktvalidatie.",
+        "buy_reasons": [
+          "Sterke geschatte vraag",
+          "Concurrentie lijkt beheersbaar",
+          "Gezonde geschatte marge van 44.9%",
+          "Sterke geschatte ROI van 120%",
+          "Positieve markttrend",
+          "Relatief laag product- en retourrisico"
+        ],
+        "avoid_reasons": [
+          "Geen zwaar risico zichtbaar in de huidige invoer"
+        ],
+        "product_dna": [
+          {
+            "key": "repeat_purchase",
+            "label": "Herhaalaankopen",
+            "score": 100,
+            "stars": 5
+          },
+          {
+            "key": "shipping_ease",
+            "label": "Verzendgemak",
+            "score": 76,
+            "stars": 4
+          },
+          {
+            "key": "private_label",
+            "label": "Private-label potentieel",
+            "score": 96,
+            "stars": 5
+          },
+          {
+            "key": "return_risk",
+            "label": "Laag retourrisico",
+            "score": 90,
+            "stars": 4
+          },
+          {
+            "key": "cashflow",
+            "label": "Cashflow",
+            "score": 57,
+            "stars": 3
+          },
+          {
+            "key": "stability",
+            "label": "Marktstabiliteit",
+            "score": 98,
+            "stars": 5
+          }
+        ]
+      },
+      "analysis_v2": {
+        "decision_engine_version": "2.0.0-scoring.1",
+        "score_config_version": "scoring-nl-new-1",
+        "analysis_id": "2ebdd6249029fa5ac1a69d9d2f4e60ed825b7785539c9010655fa21b74eb749d",
+        "status": "complete",
+        "subscores": {
+          "demand": 100.0,
+          "competition": 67.54529031342297,
+          "profitability": 0.0,
+          "risk": 20.0,
+          "data_confidence": 84.50000000000001
+        },
+        "opportunity_score": 24,
+        "verdict": "Niet inkopen",
+        "verdict_reason": "nonpositive_base_contribution",
+        "safeguards": [
+          {
+            "code": "loss",
+            "cap": 24,
+            "explanation": "De bijdrage per stuk in het basisscenario is nul of negatief."
+          },
+          {
+            "code": "stress_loss",
+            "cap": 49,
+            "explanation": "De bijdrage bij lagere prijs en hogere operationele kosten is nul of negatief."
+          },
+          {
+            "code": "not_ready",
+            "cap": 74,
+            "explanation": "Niet alle aanvullende voorwaarden voor Kansrijk zijn aangetoond."
+          }
+        ],
+        "positive_drivers": [
+          {
+            "code": "demand",
+            "label": "Vraagsignaal",
+            "points_vs_neutral": 7.5,
+            "score": 100.0,
+            "quality": 0.6
+          },
+          {
+            "code": "risk",
+            "label": "Operationeel, kwaliteits- en prijsrisico",
+            "points_vs_neutral": 4.049999999999999,
+            "score": 20.0,
+            "quality": 0.9
+          },
+          {
+            "code": "competition",
+            "label": "Concurrentie en leverpositie",
+            "points_vs_neutral": 3.509058062684595,
+            "score": 67.54529031342297,
+            "quality": 1.0
+          }
+        ],
+        "negative_drivers": [
+          {
+            "code": "profitability",
+            "label": "Bijdrage, marge en voorraad-ROI",
+            "points_vs_neutral": -18.0,
+            "score": 0.0,
+            "quality": 0.9
+          }
+        ],
+        "missing_critical_inputs": [],
+        "unknown_signals": [],
+        "readiness_missing": [
+          "positive_stress_contribution"
+        ]
+      },
+      "market": {
+        "snapshot_id": 3,
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "age_hours": 0.0,
+        "freshness": "fresh",
+        "source": "bol Retailer API",
+        "api_version": "v10",
+        "status": "complete",
+        "price_min": 24.2,
+        "price_max": 24.2,
+        "unique_seller_count": 3,
+        "offer_count": 3,
+        "data_kind": "official_measured",
+        "counts_kind": "derived"
+      },
+      "legacy_inputs": [
+        {
+          "field": "sale_price",
+          "label": "Geplande verkoopprijs",
+          "value": 39.95,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "purchase_price",
+          "label": "Inkoopprijs",
+          "value": 15,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "shipping_cost",
+          "label": "Verzendkosten",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "commission_rate",
+          "label": "Legacy commissiepercentage",
+          "value": 10,
+          "unit": "%",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_low",
+          "label": "Ondergrens geschatte maandverkopen",
+          "value": 800,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_high",
+          "label": "Bovengrens geschatte maandverkopen",
+          "value": 1000,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        }
+      ],
+      "primary_reason": {
+        "code": "loss",
+        "text": "V2 berekent een niet-positieve bijdrage na de opgenomen kosten."
+      },
+      "input_notice": "De v2-berekening gebruikt expliciete financiële bewijsgegevens. De legacy-bedragen hieronder kunnen andere definities hebben en worden niet automatisch als v2-invoer behandeld. Verkoopranges zonder vastgelegde scope of methode worden niet automatisch als v2-vraagbewijs gebruikt.",
+      "difference_notice": "De hoofdreden is een samenvatting van bewijs en safeguards; geen exacte causale uitsplitsing van het scoreverschil."
+    }
+  },
+  {
+    "scenario": "low_confidence",
+    "comparison": {
+      "product": {
+        "id": 1,
+        "name": "Fictief vergelijkingsproduct",
+        "ean": "4006381333931",
+        "category": "Acceptatietest"
+      },
+      "evaluated_at": "2026-10-01T12:00:00+00:00",
+      "default_engine": "v1",
+      "analysis_v1": {
+        "average_monthly_sales": 900,
+        "monthly_revenue": 35955.0,
+        "net_profit_per_unit": 29.96,
+        "margin_percent": 75.0,
+        "roi_percent": 998.5,
+        "market_score": 98,
+        "profit_score": 99,
+        "risk_score": 90,
+        "opportunity_score": 97,
+        "demand_score": 100,
+        "competition_score": 94,
+        "trend_score": 100,
+        "margin_score": 100,
+        "roi_score": 100,
+        "capital_efficiency_score": 93,
+        "confidence_score": 90,
+        "verdict": "Kansrijk",
+        "verdict_detail": "Sterke kandidaat voor verdere leveranciers- en marktvalidatie.",
+        "buy_reasons": [
+          "Sterke geschatte vraag",
+          "Concurrentie lijkt beheersbaar",
+          "Gezonde geschatte marge van 75.0%",
+          "Sterke geschatte ROI van 999%",
+          "Positieve markttrend",
+          "Relatief laag product- en retourrisico"
+        ],
+        "avoid_reasons": [
+          "Geen zwaar risico zichtbaar in de huidige invoer"
+        ],
+        "product_dna": [
+          {
+            "key": "repeat_purchase",
+            "label": "Herhaalaankopen",
+            "score": 100,
+            "stars": 5
+          },
+          {
+            "key": "shipping_ease",
+            "label": "Verzendgemak",
+            "score": 76,
+            "stars": 4
+          },
+          {
+            "key": "private_label",
+            "label": "Private-label potentieel",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "return_risk",
+            "label": "Laag retourrisico",
+            "score": 90,
+            "stars": 4
+          },
+          {
+            "key": "cashflow",
+            "label": "Cashflow",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "stability",
+            "label": "Marktstabiliteit",
+            "score": 98,
+            "stars": 5
+          }
+        ]
+      },
+      "analysis_v2": {
+        "decision_engine_version": "2.0.0-scoring.1",
+        "score_config_version": "scoring-nl-new-1",
+        "analysis_id": "9cd168ca3b9f445b5012beab4e426bd042049e2a2714301439fef3b40067f9e5",
+        "status": "complete",
+        "subscores": {
+          "demand": 100.0,
+          "competition": 67.54529031342297,
+          "profitability": 100.0,
+          "risk": 20.0,
+          "data_confidence": 58.5
+        },
+        "opportunity_score": 61.7590580626846,
+        "verdict": "Onderzoeken",
+        "verdict_reason": "investigate_commercial_case",
+        "safeguards": [
+          {
+            "code": "confidence_below_75",
+            "cap": 64,
+            "explanation": "De datakwaliteit is onvoldoende voor Kansrijk."
+          },
+          {
+            "code": "not_ready",
+            "cap": 74,
+            "explanation": "Niet alle aanvullende voorwaarden voor Kansrijk zijn aangetoond."
+          }
+        ],
+        "positive_drivers": [
+          {
+            "code": "demand",
+            "label": "Vraagsignaal",
+            "points_vs_neutral": 7.5,
+            "score": 100.0,
+            "quality": 0.6
+          },
+          {
+            "code": "profitability",
+            "label": "Bijdrage, marge en voorraad-ROI",
+            "points_vs_neutral": 5.0,
+            "score": 100.0,
+            "quality": 0.25
+          },
+          {
+            "code": "risk",
+            "label": "Operationeel, kwaliteits- en prijsrisico",
+            "points_vs_neutral": 4.049999999999999,
+            "score": 20.0,
+            "quality": 0.9
+          },
+          {
+            "code": "competition",
+            "label": "Concurrentie en leverpositie",
+            "points_vs_neutral": 3.509058062684595,
+            "score": 67.54529031342297,
+            "quality": 1.0
+          }
+        ],
+        "negative_drivers": [],
+        "missing_critical_inputs": [],
+        "unknown_signals": [],
+        "readiness_missing": []
+      },
+      "market": {
+        "snapshot_id": 3,
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "age_hours": 0.0,
+        "freshness": "fresh",
+        "source": "bol Retailer API",
+        "api_version": "v10",
+        "status": "complete",
+        "price_min": 24.2,
+        "price_max": 24.2,
+        "unique_seller_count": 3,
+        "offer_count": 3,
+        "data_kind": "official_measured",
+        "counts_kind": "derived"
+      },
+      "legacy_inputs": [
+        {
+          "field": "sale_price",
+          "label": "Geplande verkoopprijs",
+          "value": 39.95,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "purchase_price",
+          "label": "Inkoopprijs",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "shipping_cost",
+          "label": "Verzendkosten",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "commission_rate",
+          "label": "Legacy commissiepercentage",
+          "value": 10,
+          "unit": "%",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_low",
+          "label": "Ondergrens geschatte maandverkopen",
+          "value": 800,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_high",
+          "label": "Bovengrens geschatte maandverkopen",
+          "value": 1000,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        }
+      ],
+      "primary_reason": {
+        "code": "low_confidence",
+        "text": "V2 begrenst de beoordeling door onvoldoende datakwaliteit of vraagbewijs."
+      },
+      "input_notice": "De v2-berekening gebruikt expliciete financiële bewijsgegevens. De legacy-bedragen hieronder kunnen andere definities hebben en worden niet automatisch als v2-invoer behandeld. Verkoopranges zonder vastgelegde scope of methode worden niet automatisch als v2-vraagbewijs gebruikt.",
+      "difference_notice": "De hoofdreden is een samenvatting van bewijs en safeguards; geen exacte causale uitsplitsing van het scoreverschil."
+    }
+  },
+  {
+    "scenario": "competition",
+    "comparison": {
+      "product": {
+        "id": 1,
+        "name": "Fictief vergelijkingsproduct",
+        "ean": "4006381333931",
+        "category": "Acceptatietest"
+      },
+      "evaluated_at": "2026-10-01T12:00:00+00:00",
+      "default_engine": "v1",
+      "analysis_v1": {
+        "average_monthly_sales": 900,
+        "monthly_revenue": 35955.0,
+        "net_profit_per_unit": 29.96,
+        "margin_percent": 75.0,
+        "roi_percent": 998.5,
+        "market_score": 98,
+        "profit_score": 99,
+        "risk_score": 90,
+        "opportunity_score": 97,
+        "demand_score": 100,
+        "competition_score": 94,
+        "trend_score": 100,
+        "margin_score": 100,
+        "roi_score": 100,
+        "capital_efficiency_score": 93,
+        "confidence_score": 90,
+        "verdict": "Kansrijk",
+        "verdict_detail": "Sterke kandidaat voor verdere leveranciers- en marktvalidatie.",
+        "buy_reasons": [
+          "Sterke geschatte vraag",
+          "Concurrentie lijkt beheersbaar",
+          "Gezonde geschatte marge van 75.0%",
+          "Sterke geschatte ROI van 999%",
+          "Positieve markttrend",
+          "Relatief laag product- en retourrisico"
+        ],
+        "avoid_reasons": [
+          "Geen zwaar risico zichtbaar in de huidige invoer"
+        ],
+        "product_dna": [
+          {
+            "key": "repeat_purchase",
+            "label": "Herhaalaankopen",
+            "score": 100,
+            "stars": 5
+          },
+          {
+            "key": "shipping_ease",
+            "label": "Verzendgemak",
+            "score": 76,
+            "stars": 4
+          },
+          {
+            "key": "private_label",
+            "label": "Private-label potentieel",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "return_risk",
+            "label": "Laag retourrisico",
+            "score": 90,
+            "stars": 4
+          },
+          {
+            "key": "cashflow",
+            "label": "Cashflow",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "stability",
+            "label": "Marktstabiliteit",
+            "score": 98,
+            "stars": 5
+          }
+        ]
+      },
+      "analysis_v2": {
+        "decision_engine_version": "2.0.0-scoring.1",
+        "score_config_version": "scoring-nl-new-1",
+        "analysis_id": "952dee75152d7427843c2fcce62ff922557723f20ab80211f0d0f43980ca2fc1",
+        "status": "complete",
+        "subscores": {
+          "demand": 100.0,
+          "competition": 40.718125898786326,
+          "profitability": 100.0,
+          "risk": 20.0,
+          "data_confidence": 84.50000000000001
+        },
+        "opportunity_score": 74.59362517975727,
+        "verdict": "Onderzoeken",
+        "verdict_reason": "investigate_commercial_case",
+        "safeguards": [],
+        "positive_drivers": [
+          {
+            "code": "profitability",
+            "label": "Bijdrage, marge en voorraad-ROI",
+            "points_vs_neutral": 18.0,
+            "score": 100.0,
+            "quality": 0.9
+          },
+          {
+            "code": "demand",
+            "label": "Vraagsignaal",
+            "points_vs_neutral": 7.5,
+            "score": 100.0,
+            "quality": 0.6
+          },
+          {
+            "code": "risk",
+            "label": "Operationeel, kwaliteits- en prijsrisico",
+            "points_vs_neutral": 4.049999999999999,
+            "score": 20.0,
+            "quality": 0.9
+          }
+        ],
+        "negative_drivers": [
+          {
+            "code": "competition",
+            "label": "Concurrentie en leverpositie",
+            "points_vs_neutral": -1.8563748202427348,
+            "score": 40.718125898786326,
+            "quality": 1.0
+          }
+        ],
+        "missing_critical_inputs": [],
+        "unknown_signals": [],
+        "readiness_missing": []
+      },
+      "market": {
+        "snapshot_id": 3,
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "age_hours": 0.0,
+        "freshness": "fresh",
+        "source": "bol Retailer API",
+        "api_version": "v10",
+        "status": "complete",
+        "price_min": 24.2,
+        "price_max": 24.2,
+        "unique_seller_count": 100,
+        "offer_count": 100,
+        "data_kind": "official_measured",
+        "counts_kind": "derived"
+      },
+      "legacy_inputs": [
+        {
+          "field": "sale_price",
+          "label": "Geplande verkoopprijs",
+          "value": 39.95,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "purchase_price",
+          "label": "Inkoopprijs",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "shipping_cost",
+          "label": "Verzendkosten",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "commission_rate",
+          "label": "Legacy commissiepercentage",
+          "value": 10,
+          "unit": "%",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_low",
+          "label": "Ondergrens geschatte maandverkopen",
+          "value": 800,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_high",
+          "label": "Bovengrens geschatte maandverkopen",
+          "value": 1000,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        }
+      ],
+      "primary_reason": {
+        "code": "competition",
+        "text": "V2 ziet sterke concurrentiedruk in de opgeslagen bol-aanbiedingen."
+      },
+      "input_notice": "De v2-berekening gebruikt expliciete financiële bewijsgegevens. De legacy-bedragen hieronder kunnen andere definities hebben en worden niet automatisch als v2-invoer behandeld. Verkoopranges zonder vastgelegde scope of methode worden niet automatisch als v2-vraagbewijs gebruikt.",
+      "difference_notice": "De hoofdreden is een samenvatting van bewijs en safeguards; geen exacte causale uitsplitsing van het scoreverschil."
+    }
+  },
+  {
+    "scenario": "stale_market",
+    "comparison": {
+      "product": {
+        "id": 1,
+        "name": "Fictief vergelijkingsproduct",
+        "ean": "4006381333931",
+        "category": "Acceptatietest"
+      },
+      "evaluated_at": "2026-10-01T12:00:00+00:00",
+      "default_engine": "v1",
+      "analysis_v1": {
+        "average_monthly_sales": 900,
+        "monthly_revenue": 35955.0,
+        "net_profit_per_unit": 29.96,
+        "margin_percent": 75.0,
+        "roi_percent": 998.5,
+        "market_score": 98,
+        "profit_score": 99,
+        "risk_score": 90,
+        "opportunity_score": 97,
+        "demand_score": 100,
+        "competition_score": 94,
+        "trend_score": 100,
+        "margin_score": 100,
+        "roi_score": 100,
+        "capital_efficiency_score": 93,
+        "confidence_score": 90,
+        "verdict": "Kansrijk",
+        "verdict_detail": "Sterke kandidaat voor verdere leveranciers- en marktvalidatie.",
+        "buy_reasons": [
+          "Sterke geschatte vraag",
+          "Concurrentie lijkt beheersbaar",
+          "Gezonde geschatte marge van 75.0%",
+          "Sterke geschatte ROI van 999%",
+          "Positieve markttrend",
+          "Relatief laag product- en retourrisico"
+        ],
+        "avoid_reasons": [
+          "Geen zwaar risico zichtbaar in de huidige invoer"
+        ],
+        "product_dna": [
+          {
+            "key": "repeat_purchase",
+            "label": "Herhaalaankopen",
+            "score": 100,
+            "stars": 5
+          },
+          {
+            "key": "shipping_ease",
+            "label": "Verzendgemak",
+            "score": 76,
+            "stars": 4
+          },
+          {
+            "key": "private_label",
+            "label": "Private-label potentieel",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "return_risk",
+            "label": "Laag retourrisico",
+            "score": 90,
+            "stars": 4
+          },
+          {
+            "key": "cashflow",
+            "label": "Cashflow",
+            "score": 97,
+            "stars": 5
+          },
+          {
+            "key": "stability",
+            "label": "Marktstabiliteit",
+            "score": 98,
+            "stars": 5
+          }
+        ]
+      },
+      "analysis_v2": {
+        "decision_engine_version": "2.0.0-scoring.1",
+        "score_config_version": "scoring-nl-new-1",
+        "analysis_id": "45e1794390ca8fff1d95892e8d385b0c31404a0a82d7f8633363236a8050ba99",
+        "status": "incomplete",
+        "subscores": {
+          "demand": 100.0,
+          "competition": 67.54529031342297,
+          "profitability": null,
+          "risk": 20.0,
+          "data_confidence": 36.75
+        },
+        "opportunity_score": null,
+        "verdict": "Onderzoeken",
+        "verdict_reason": "insufficient_evidence",
+        "safeguards": [
+          {
+            "code": "confidence_below_75",
+            "cap": 64,
+            "explanation": "De datakwaliteit is onvoldoende voor Kansrijk."
+          },
+          {
+            "code": "confidence_below_50",
+            "cap": 49,
+            "explanation": "Er is onvoldoende bewijs voor een inkoopbeslissing; eerst onderzoeken."
+          },
+          {
+            "code": "not_ready",
+            "cap": 74,
+            "explanation": "Niet alle aanvullende voorwaarden voor Kansrijk zijn aangetoond."
+          }
+        ],
+        "positive_drivers": [
+          {
+            "code": "demand",
+            "label": "Vraagsignaal",
+            "points_vs_neutral": 7.5,
+            "score": 100.0,
+            "quality": 0.6
+          },
+          {
+            "code": "risk",
+            "label": "Operationeel, kwaliteits- en prijsrisico",
+            "points_vs_neutral": 3.8249999999999993,
+            "score": 20.0,
+            "quality": 0.85
+          },
+          {
+            "code": "competition",
+            "label": "Concurrentie en leverpositie",
+            "points_vs_neutral": 1.579076128208067,
+            "score": 67.54529031342297,
+            "quality": 0.45
+          }
+        ],
+        "negative_drivers": [],
+        "missing_critical_inputs": [
+          "current_complete_market_price",
+          "financial.commission",
+          "financial.sale_price"
+        ],
+        "unknown_signals": [
+          "profitability"
+        ],
+        "readiness_missing": [
+          "positive_stress_contribution"
+        ]
+      },
+      "market": {
+        "snapshot_id": 3,
+        "measured_at": "2026-09-27T12:00:00+00:00",
+        "age_hours": 96.0,
+        "freshness": "stale",
+        "source": "bol Retailer API",
+        "api_version": "v10",
+        "status": "complete",
+        "price_min": 24.2,
+        "price_max": 24.2,
+        "unique_seller_count": 3,
+        "offer_count": 3,
+        "data_kind": "official_measured",
+        "counts_kind": "derived"
+      },
+      "legacy_inputs": [
+        {
+          "field": "sale_price",
+          "label": "Geplande verkoopprijs",
+          "value": 39.95,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "purchase_price",
+          "label": "Inkoopprijs",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "shipping_cost",
+          "label": "Verzendkosten",
+          "value": 3,
+          "unit": "EUR",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "commission_rate",
+          "label": "Legacy commissiepercentage",
+          "value": 10,
+          "unit": "%",
+          "kind": "manual_or_imported",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_low",
+          "label": "Ondergrens geschatte maandverkopen",
+          "value": 800,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        },
+        {
+          "field": "monthly_sales_high",
+          "label": "Bovengrens geschatte maandverkopen",
+          "value": 1000,
+          "unit": "per maand",
+          "kind": "estimated",
+          "source": "Opgeslagen ProductRadar-invoer",
+          "recorded_at": null,
+          "used_in_v2": false
+        }
+      ],
+      "primary_reason": {
+        "code": "stale_market",
+        "text": "Marktmeting ouder dan 24 uur: vernieuw de marktgegevens voor een actuele v2-beoordeling."
+      },
+      "input_notice": "De financiële v2-basis is onvolledig. Legacy-bedragen blijven zichtbaar, maar worden niet automatisch omgezet: btw-basis, volledige kosten, tariefcontext en brondatums moeten expliciet vastliggen. Verkoopranges zonder vastgelegde scope of methode worden niet automatisch als v2-vraagbewijs gebruikt.",
+      "difference_notice": "De hoofdreden is een samenvatting van bewijs en safeguards; geen exacte causale uitsplitsing van het scoreverschil."
+    }
+  }
+]

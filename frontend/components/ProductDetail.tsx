@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Product } from "../lib/types";
 import { ScoreBar } from "./ScoreBar";
+import { DecisionComparison } from "./DecisionComparison";
 
 type Props = { product: Product };
 
@@ -48,6 +49,8 @@ export function ProductDetail({ product }: Props) {
           <b>Score {product.analysis.opportunity_score}/100</b>
         </div>
       </section>
+
+      <DecisionComparison productId={product.id} />
 
       <section className="detail-metrics">
         <div className="panel metric-card"><span>Verkoopprijs</span><strong>{money(product.sale_price)}</strong><small>huidige invoer</small></div>

@@ -8,6 +8,7 @@ from app.api.bol import router as bol_router
 from app.core.database import init_db
 from app.api.financial import router as financial_router
 from app.api.decision import router as decision_router
+from app.api.comparison import router as comparison_router
 
 app = FastAPI(title="ProductRadar API", version="0.1.0")
 app.add_middleware(
@@ -25,6 +26,7 @@ app.include_router(products_router, prefix="/api")
 app.include_router(bol_router, prefix="/api")
 app.include_router(financial_router, prefix="/api")
 app.include_router(decision_router, prefix="/api")
+app.include_router(comparison_router, prefix="/api")
 
 
 @app.on_event("startup")
