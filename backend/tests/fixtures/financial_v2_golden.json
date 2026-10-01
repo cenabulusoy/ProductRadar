@@ -1,0 +1,2797 @@
+[
+  {
+    "name": "design",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "7",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": {
+      "source": "bol Retailer API",
+      "country": "NL",
+      "condition": "NEW",
+      "currency": "EUR",
+      "api_version": "v10",
+      "status": "complete",
+      "pagination_complete": true,
+      "measured_at": "2026-09-30T12:00:00+00:00",
+      "offers": [
+        {
+          "offerId": "1",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true
+        }
+      ]
+    },
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "7",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "planned_price_not_above_market",
+        "selected_from": "planned_sale_price",
+        "selected_gross_price": "24.2000",
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "usable",
+          "reason": "lowest_bol_best_offer",
+          "price": "24.2000",
+          "snapshot_id": 12,
+          "provenance": {
+            "kind": "official_measured",
+            "source": "bol Retailer API v10 / products/{ean}/offers",
+            "recorded_at": "2026-09-30T12:00:00+00:00",
+            "snapshot_id": 12
+          },
+          "offer_id": "1"
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "base": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "stress": {
+        "status": "complete",
+        "sale_price_including_vat": "21.7800",
+        "revenue_excluding_vat": "18.0000",
+        "sales_vat_amount": "3.7800",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.1780",
+        "commission_total": "2.7580",
+        "contribution_per_unit": "3.8420",
+        "contribution_margin_percent": "21.3444",
+        "inventory_roi_percent": "54.8857",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "loss",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "15",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": {
+      "source": "bol Retailer API",
+      "country": "NL",
+      "condition": "NEW",
+      "currency": "EUR",
+      "api_version": "v10",
+      "status": "complete",
+      "pagination_complete": true,
+      "measured_at": "2026-09-30T12:00:00+00:00",
+      "offers": [
+        {
+          "offerId": "1",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true
+        }
+      ]
+    },
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "15",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "planned_price_not_above_market",
+        "selected_from": "planned_sale_price",
+        "selected_gross_price": "24.2000",
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "usable",
+          "reason": "lowest_bol_best_offer",
+          "price": "24.2000",
+          "snapshot_id": 12,
+          "provenance": {
+            "kind": "official_measured",
+            "source": "bol Retailer API v10 / products/{ean}/offers",
+            "recorded_at": "2026-09-30T12:00:00+00:00",
+            "snapshot_id": 12
+          },
+          "offer_id": "1"
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "15.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "-2.0000",
+        "contribution_margin_percent": "-10.0000",
+        "inventory_roi_percent": "-13.3333",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "base": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "15.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "-2.0000",
+        "contribution_margin_percent": "-10.0000",
+        "inventory_roi_percent": "-13.3333",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "stress": {
+        "status": "complete",
+        "sale_price_including_vat": "21.7800",
+        "revenue_excluding_vat": "18.0000",
+        "sales_vat_amount": "3.7800",
+        "effective_costs": {
+          "landed_purchase_cost": "15.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.1780",
+        "commission_total": "2.7580",
+        "contribution_per_unit": "-4.1580",
+        "contribution_margin_percent": "-23.1000",
+        "inventory_roi_percent": "-27.7200",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "zero",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": {
+      "source": "bol Retailer API",
+      "country": "NL",
+      "condition": "NEW",
+      "currency": "EUR",
+      "api_version": "v10",
+      "status": "complete",
+      "pagination_complete": true,
+      "measured_at": "2026-09-30T12:00:00+00:00",
+      "offers": [
+        {
+          "offerId": "1",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true
+        }
+      ]
+    },
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "planned_price_not_above_market",
+        "selected_from": "planned_sale_price",
+        "selected_gross_price": "24.2000",
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "usable",
+          "reason": "lowest_bol_best_offer",
+          "price": "24.2000",
+          "snapshot_id": 12,
+          "provenance": {
+            "kind": "official_measured",
+            "source": "bol Retailer API v10 / products/{ean}/offers",
+            "recorded_at": "2026-09-30T12:00:00+00:00",
+            "snapshot_id": 12
+          },
+          "offer_id": "1"
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "0.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "13.0000",
+        "contribution_margin_percent": "65.0000",
+        "inventory_roi_percent": null,
+        "missing_inputs": [],
+        "roi_reason": "zero_landed_purchase_cost"
+      },
+      "base": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "0.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "13.0000",
+        "contribution_margin_percent": "65.0000",
+        "inventory_roi_percent": null,
+        "missing_inputs": [],
+        "roi_reason": "zero_landed_purchase_cost"
+      },
+      "stress": {
+        "status": "complete",
+        "sale_price_including_vat": "21.7800",
+        "revenue_excluding_vat": "18.0000",
+        "sales_vat_amount": "3.7800",
+        "effective_costs": {
+          "landed_purchase_cost": "0.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.1780",
+        "commission_total": "2.7580",
+        "contribution_per_unit": "10.8420",
+        "contribution_margin_percent": "60.2333",
+        "inventory_roi_percent": null,
+        "missing_inputs": [],
+        "roi_reason": "zero_landed_purchase_cost"
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "missing",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": null,
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": {
+      "source": "bol Retailer API",
+      "country": "NL",
+      "condition": "NEW",
+      "currency": "EUR",
+      "api_version": "v10",
+      "status": "complete",
+      "pagination_complete": true,
+      "measured_at": "2026-09-30T12:00:00+00:00",
+      "offers": [
+        {
+          "offerId": "1",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true
+        }
+      ]
+    },
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": null,
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "planned_price_not_above_market",
+        "selected_from": "planned_sale_price",
+        "selected_gross_price": "24.2000",
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "usable",
+          "reason": "lowest_bol_best_offer",
+          "price": "24.2000",
+          "snapshot_id": 12,
+          "provenance": {
+            "kind": "official_measured",
+            "source": "bol Retailer API v10 / products/{ean}/offers",
+            "recorded_at": "2026-09-30T12:00:00+00:00",
+            "snapshot_id": 12
+          },
+          "offer_id": "1"
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "incomplete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": null,
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "landed_purchase_cost"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "base": {
+        "status": "incomplete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": null,
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "landed_purchase_cost"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "stress": {
+        "status": "incomplete",
+        "sale_price_including_vat": "21.7800",
+        "revenue_excluding_vat": "18.0000",
+        "sales_vat_amount": "3.7800",
+        "effective_costs": {
+          "landed_purchase_cost": null,
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.1780",
+        "commission_total": "2.7580",
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "landed_purchase_cost"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "no_market",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "7",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": null,
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "7",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "missing_market_snapshot",
+        "selected_from": null,
+        "selected_gross_price": null,
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "unavailable",
+          "reason": "missing_market_snapshot",
+          "price": null,
+          "snapshot_id": 12,
+          "provenance": null,
+          "offer_id": null
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "base": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "stress": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "manual",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "7",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "scenario_mode": "manual"
+    },
+    "market": null,
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "manual",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "7",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "manual",
+        "reason": "explicit_manual_scenario",
+        "selected_from": "planned_sale_price",
+        "selected_gross_price": "24.2000",
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "unavailable",
+          "reason": "missing_market_snapshot",
+          "price": null,
+          "snapshot_id": 12,
+          "provenance": null,
+          "offer_id": null
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "base": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "stress": {
+        "status": "complete",
+        "sale_price_including_vat": "21.7800",
+        "revenue_excluding_vat": "18.0000",
+        "sales_vat_amount": "3.7800",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.1780",
+        "commission_total": "2.7580",
+        "contribution_per_unit": "3.8420",
+        "contribution_margin_percent": "21.3444",
+        "inventory_roi_percent": "54.8857",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "old_market",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "7",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": {
+      "source": "bol Retailer API",
+      "country": "NL",
+      "condition": "NEW",
+      "currency": "EUR",
+      "api_version": "v10",
+      "status": "complete",
+      "pagination_complete": true,
+      "measured_at": "2026-09-26T12:00:00+00:00",
+      "offers": [
+        {
+          "offerId": "1",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true
+        }
+      ]
+    },
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "7",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "market_older_than_24_hours",
+        "selected_from": null,
+        "selected_gross_price": null,
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "unavailable",
+          "reason": "market_older_than_24_hours",
+          "price": null,
+          "snapshot_id": 12,
+          "provenance": {
+            "kind": "official_measured",
+            "source": "bol Retailer API v10 / products/{ean}/offers",
+            "recorded_at": "2026-09-26T12:00:00+00:00",
+            "snapshot_id": 12
+          },
+          "offer_id": null
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "base": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "stress": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "no_inputs",
+    "input": {},
+    "market": null,
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": null,
+        "sales_vat_rate": null,
+        "landed_purchase_cost": null,
+        "fulfilment_cost": null,
+        "advertising_cost": null,
+        "returns_loss_reserve": null,
+        "other_allocated_cost": null,
+        "commission": null
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "planned_price_or_vat_basis_missing",
+        "selected_from": null,
+        "selected_gross_price": null,
+        "planned_gross_price": null,
+        "market_reference": {
+          "status": "unavailable",
+          "reason": "missing_market_snapshot",
+          "price": null,
+          "snapshot_id": 12,
+          "provenance": null,
+          "offer_id": null
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": null,
+          "fulfilment_cost": null,
+          "advertising_cost": null,
+          "returns_loss_reserve": null,
+          "other_allocated_cost": null
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "sales_vat_rate",
+          "landed_purchase_cost",
+          "fulfilment_cost",
+          "advertising_cost",
+          "returns_loss_reserve",
+          "other_allocated_cost",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "base": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": null,
+          "fulfilment_cost": null,
+          "advertising_cost": null,
+          "returns_loss_reserve": null,
+          "other_allocated_cost": null
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "sales_vat_rate",
+          "landed_purchase_cost",
+          "fulfilment_cost",
+          "advertising_cost",
+          "returns_loss_reserve",
+          "other_allocated_cost",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "stress": {
+        "status": "incomplete",
+        "sale_price_including_vat": null,
+        "revenue_excluding_vat": null,
+        "sales_vat_amount": null,
+        "effective_costs": {
+          "landed_purchase_cost": null,
+          "fulfilment_cost": null,
+          "advertising_cost": null,
+          "returns_loss_reserve": null,
+          "other_allocated_cost": null
+        },
+        "commission_fixed": null,
+        "commission_variable": null,
+        "commission_total": null,
+        "contribution_per_unit": null,
+        "contribution_margin_percent": null,
+        "inventory_roi_percent": null,
+        "missing_inputs": [
+          "sale_price",
+          "sales_vat_rate",
+          "landed_purchase_cost",
+          "fulfilment_cost",
+          "advertising_cost",
+          "returns_loss_reserve",
+          "other_allocated_cost",
+          "commission"
+        ],
+        "roi_reason": "incomplete_inputs"
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  },
+  {
+    "name": "recoverable_vat",
+    "input": {
+      "planned_sale_price": {
+        "amount": "24.20",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "sales_vat_rate": {
+        "value": "21",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "landed_purchase_cost": {
+        "amount": "8.47",
+        "vat_basis": "inclusive",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        },
+        "vat_rate_percent": 21,
+        "input_vat_recoverable": true
+      },
+      "fulfilment_cost": {
+        "amount": "3",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "advertising_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "returns_loss_reserve": {
+        "amount": "1",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "other_allocated_cost": {
+        "amount": "0",
+        "vat_basis": "effective",
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "commission": {
+        "fixed_fee": {
+          "amount": ".58",
+          "vat_basis": "effective",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00+00:00"
+          }
+        },
+        "variable_rate_percent": "10",
+        "variable_fee_vat_basis": "effective",
+        "flat_tariff_confirmed": true,
+        "provenance": {
+          "kind": "manual_or_imported",
+          "source": "Fictitious test quote",
+          "recorded_at": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "market": {
+      "source": "bol Retailer API",
+      "country": "NL",
+      "condition": "NEW",
+      "currency": "EUR",
+      "api_version": "v10",
+      "status": "complete",
+      "pagination_complete": true,
+      "measured_at": "2026-09-30T12:00:00+00:00",
+      "offers": [
+        {
+          "offerId": "1",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true
+        }
+      ]
+    },
+    "as_of": "2026-09-30T12:00:00+00:00",
+    "expected": {
+      "financial_engine_version": "2.0.0-financial.1",
+      "input_schema_version": "1",
+      "policy_version": "financial-nl-new-1",
+      "as_of": "2026-09-30T12:00:00+00:00",
+      "currency": "EUR",
+      "label": "Bijdrage per stuk na opgenomen kosten",
+      "input_provenance_status": "caller_declared; market_snapshot_server_loaded",
+      "inputs": {
+        "currency": "EUR",
+        "scenario_mode": "conservative",
+        "planned_sale_price": {
+          "amount": "24.20",
+          "vat_basis": "inclusive",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "sales_vat_rate": {
+          "value": "21",
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "landed_purchase_cost": {
+          "amount": "8.47",
+          "vat_basis": "inclusive",
+          "vat_rate_percent": "21",
+          "input_vat_recoverable": true,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "fulfilment_cost": {
+          "amount": "3",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "advertising_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "returns_loss_reserve": {
+          "amount": "1",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "other_allocated_cost": {
+          "amount": "0",
+          "vat_basis": "effective",
+          "vat_rate_percent": null,
+          "input_vat_recoverable": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        },
+        "commission": {
+          "fixed_fee": {
+            "amount": "0.58",
+            "vat_basis": "effective",
+            "vat_rate_percent": null,
+            "input_vat_recoverable": null,
+            "provenance": {
+              "kind": "manual_or_imported",
+              "source": "Fictitious test quote",
+              "recorded_at": "2020-01-01T00:00:00Z",
+              "snapshot_id": null
+            }
+          },
+          "variable_rate_percent": "10",
+          "variable_fee_vat_basis": "effective",
+          "variable_fee_vat_rate_percent": null,
+          "variable_fee_input_vat_recoverable": null,
+          "flat_tariff_confirmed": true,
+          "valid_from_gross_price": null,
+          "valid_to_gross_price": null,
+          "provenance": {
+            "kind": "manual_or_imported",
+            "source": "Fictitious test quote",
+            "recorded_at": "2020-01-01T00:00:00Z",
+            "snapshot_id": null
+          }
+        }
+      },
+      "price_selection": {
+        "mode": "conservative",
+        "reason": "planned_price_not_above_market",
+        "selected_from": "planned_sale_price",
+        "selected_gross_price": "24.2000",
+        "planned_gross_price": "24.2000",
+        "market_reference": {
+          "status": "usable",
+          "reason": "lowest_bol_best_offer",
+          "price": "24.2000",
+          "snapshot_id": 12,
+          "provenance": {
+            "kind": "official_measured",
+            "source": "bol Retailer API v10 / products/{ean}/offers",
+            "recorded_at": "2026-09-30T12:00:00+00:00",
+            "snapshot_id": 12
+          },
+          "offer_id": "1"
+        },
+        "provenance": {
+          "kind": "derived",
+          "source": "financial-nl-new-1 price selection",
+          "recorded_at": "2026-09-30T12:00:00+00:00",
+          "snapshot_id": 12,
+          "depends_on": [
+            "inputs.planned_sale_price",
+            "inputs.sales_vat_rate",
+            "price_selection.market_reference"
+          ]
+        }
+      },
+      "manual": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "base": {
+        "status": "complete",
+        "sale_price_including_vat": "24.2000",
+        "revenue_excluding_vat": "20.0000",
+        "sales_vat_amount": "4.2000",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.0000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.0000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.4200",
+        "commission_total": "3.0000",
+        "contribution_per_unit": "6.0000",
+        "contribution_margin_percent": "30.0000",
+        "inventory_roi_percent": "85.7143",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "stress": {
+        "status": "complete",
+        "sale_price_including_vat": "21.7800",
+        "revenue_excluding_vat": "18.0000",
+        "sales_vat_amount": "3.7800",
+        "effective_costs": {
+          "landed_purchase_cost": "7.0000",
+          "fulfilment_cost": "3.3000",
+          "advertising_cost": "0.0000",
+          "returns_loss_reserve": "1.1000",
+          "other_allocated_cost": "0.0000"
+        },
+        "commission_fixed": "0.5800",
+        "commission_variable": "2.1780",
+        "commission_total": "2.7580",
+        "contribution_per_unit": "3.8420",
+        "contribution_margin_percent": "21.3444",
+        "inventory_roi_percent": "54.8857",
+        "missing_inputs": [],
+        "roi_reason": null
+      },
+      "calculation_provenance": {
+        "kind": "derived",
+        "source": "financial-engine/2.0.0-financial.1",
+        "recorded_at": "2026-09-30T12:00:00+00:00",
+        "snapshot_id": 12,
+        "depends_on": [
+          "inputs",
+          "price_selection"
+        ],
+        "stress_assumptions": {
+          "sale_price_multiplier": "0.90",
+          "operational_cost_multiplier": "1.10",
+          "landed_purchase_and_fixed_commission_unchanged": true
+        }
+      },
+      "rounding": "Decimal precision 40; output 4 decimal places ROUND_HALF_UP; no intermediate rounding"
+    }
+  }
+]
