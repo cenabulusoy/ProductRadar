@@ -131,19 +131,42 @@
         "readiness_missing": []
       },
       "market": {
-        "snapshot_id": 3,
-        "measured_at": "2026-10-01T12:00:00+00:00",
+        "freshness": "current",
+        "reason": "complete_within_24_hours",
         "age_hours": 0.0,
-        "freshness": "fresh",
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "snapshot_id": 3,
         "source": "bol Retailer API",
         "api_version": "v10",
         "status": "complete",
+        "usable_for_current_analysis": true,
         "price_min": 24.2,
         "price_max": 24.2,
-        "unique_seller_count": 3,
         "offer_count": 3,
+        "unique_seller_count": 3,
+        "relevant_offer": {
+          "offerId": "0",
+          "retailerId": "0",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true,
+          "fulfilmentMethod": "FBB",
+          "maxDeliveryDate": "2026-10-02"
+        },
+        "relevant_price": "24.2000",
+        "offer_data_kind": "official_measured",
         "data_kind": "official_measured",
-        "counts_kind": "derived"
+        "counts_kind": "derived",
+        "freshness_kind": "derived",
+        "as_of": "2026-10-01T12:00:00+00:00",
+        "freshness_version": "market-freshness/1.0",
+        "freshness_provenance": {
+          "kind": "derived",
+          "source": "ProductRadar market-freshness/1.0",
+          "recorded_at": "2026-10-01T12:00:00+00:00",
+          "snapshot_id": 3
+        }
       },
       "legacy_inputs": [
         {
@@ -366,19 +389,42 @@
         ]
       },
       "market": {
-        "snapshot_id": 3,
-        "measured_at": "2026-10-01T12:00:00+00:00",
+        "freshness": "current",
+        "reason": "complete_within_24_hours",
         "age_hours": 0.0,
-        "freshness": "fresh",
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "snapshot_id": 3,
         "source": "bol Retailer API",
         "api_version": "v10",
         "status": "complete",
+        "usable_for_current_analysis": true,
         "price_min": 24.2,
         "price_max": 24.2,
-        "unique_seller_count": 3,
         "offer_count": 3,
+        "unique_seller_count": 3,
+        "relevant_offer": {
+          "offerId": "0",
+          "retailerId": "0",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true,
+          "fulfilmentMethod": "FBB",
+          "maxDeliveryDate": "2026-10-02"
+        },
+        "relevant_price": "24.2000",
+        "offer_data_kind": "official_measured",
         "data_kind": "official_measured",
-        "counts_kind": "derived"
+        "counts_kind": "derived",
+        "freshness_kind": "derived",
+        "as_of": "2026-10-01T12:00:00+00:00",
+        "freshness_version": "market-freshness/1.0",
+        "freshness_provenance": {
+          "kind": "derived",
+          "source": "ProductRadar market-freshness/1.0",
+          "recorded_at": "2026-10-01T12:00:00+00:00",
+          "snapshot_id": 3
+        }
       },
       "legacy_inputs": [
         {
@@ -593,19 +639,42 @@
         "readiness_missing": []
       },
       "market": {
-        "snapshot_id": 3,
-        "measured_at": "2026-10-01T12:00:00+00:00",
+        "freshness": "current",
+        "reason": "complete_within_24_hours",
         "age_hours": 0.0,
-        "freshness": "fresh",
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "snapshot_id": 3,
         "source": "bol Retailer API",
         "api_version": "v10",
         "status": "complete",
+        "usable_for_current_analysis": true,
         "price_min": 24.2,
         "price_max": 24.2,
-        "unique_seller_count": 3,
         "offer_count": 3,
+        "unique_seller_count": 3,
+        "relevant_offer": {
+          "offerId": "0",
+          "retailerId": "0",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true,
+          "fulfilmentMethod": "FBB",
+          "maxDeliveryDate": "2026-10-02"
+        },
+        "relevant_price": "24.2000",
+        "offer_data_kind": "official_measured",
         "data_kind": "official_measured",
-        "counts_kind": "derived"
+        "counts_kind": "derived",
+        "freshness_kind": "derived",
+        "as_of": "2026-10-01T12:00:00+00:00",
+        "freshness_version": "market-freshness/1.0",
+        "freshness_provenance": {
+          "kind": "derived",
+          "source": "ProductRadar market-freshness/1.0",
+          "recorded_at": "2026-10-01T12:00:00+00:00",
+          "snapshot_id": 3
+        }
       },
       "legacy_inputs": [
         {
@@ -810,19 +879,42 @@
         "readiness_missing": []
       },
       "market": {
-        "snapshot_id": 3,
-        "measured_at": "2026-10-01T12:00:00+00:00",
+        "freshness": "current",
+        "reason": "complete_within_24_hours",
         "age_hours": 0.0,
-        "freshness": "fresh",
+        "measured_at": "2026-10-01T12:00:00+00:00",
+        "snapshot_id": 3,
         "source": "bol Retailer API",
         "api_version": "v10",
         "status": "complete",
+        "usable_for_current_analysis": true,
         "price_min": 24.2,
         "price_max": 24.2,
-        "unique_seller_count": 100,
         "offer_count": 100,
+        "unique_seller_count": 100,
+        "relevant_offer": {
+          "offerId": "0",
+          "retailerId": "0",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true,
+          "fulfilmentMethod": "FBB",
+          "maxDeliveryDate": "2026-10-02"
+        },
+        "relevant_price": "24.2000",
+        "offer_data_kind": "official_measured",
         "data_kind": "official_measured",
-        "counts_kind": "derived"
+        "counts_kind": "derived",
+        "freshness_kind": "derived",
+        "as_of": "2026-10-01T12:00:00+00:00",
+        "freshness_version": "market-freshness/1.0",
+        "freshness_provenance": {
+          "kind": "derived",
+          "source": "ProductRadar market-freshness/1.0",
+          "recorded_at": "2026-10-01T12:00:00+00:00",
+          "snapshot_id": 3
+        }
       },
       "legacy_inputs": [
         {
@@ -1043,19 +1135,42 @@
         ]
       },
       "market": {
-        "snapshot_id": 3,
-        "measured_at": "2026-09-27T12:00:00+00:00",
+        "freshness": "historical",
+        "reason": "older_than_72_hours",
         "age_hours": 96.0,
-        "freshness": "stale",
+        "measured_at": "2026-09-27T12:00:00+00:00",
+        "snapshot_id": 3,
         "source": "bol Retailer API",
         "api_version": "v10",
         "status": "complete",
+        "usable_for_current_analysis": false,
         "price_min": 24.2,
         "price_max": 24.2,
-        "unique_seller_count": 3,
         "offer_count": 3,
+        "unique_seller_count": 3,
+        "relevant_offer": {
+          "offerId": "0",
+          "retailerId": "0",
+          "countryCode": "NL",
+          "condition": "NEW",
+          "price": 24.2,
+          "bestOffer": true,
+          "fulfilmentMethod": "FBB",
+          "maxDeliveryDate": "2026-09-28"
+        },
+        "relevant_price": "24.2000",
+        "offer_data_kind": "official_measured",
         "data_kind": "official_measured",
-        "counts_kind": "derived"
+        "counts_kind": "derived",
+        "freshness_kind": "derived",
+        "as_of": "2026-10-01T12:00:00+00:00",
+        "freshness_version": "market-freshness/1.0",
+        "freshness_provenance": {
+          "kind": "derived",
+          "source": "ProductRadar market-freshness/1.0",
+          "recorded_at": "2026-10-01T12:00:00+00:00",
+          "snapshot_id": 3
+        }
       },
       "legacy_inputs": [
         {

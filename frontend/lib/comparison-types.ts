@@ -14,7 +14,7 @@ export type Comparison = {
   };
   market: { snapshot_id: number | null; measured_at: string | null; age_hours: number | null; freshness: string;
     source: string | null; api_version: string | null; status: string; price_min: number | null; price_max: number | null;
-    unique_seller_count: number | null; offer_count: number | null };
+    unique_seller_count: number | null; offer_count: number | null; reason:string;usable_for_current_analysis:boolean;freshness_kind:string };
   legacy_inputs: { field: string; label: string; value: number | null; unit: string; kind: string; source: string; recorded_at: string | null; used_in_v2: boolean }[];
   primary_reason: { code: string; text: string }; input_notice: string; difference_notice: string;
 };

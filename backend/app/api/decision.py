@@ -10,6 +10,7 @@ from app.analysis.scoring_v2 import ScoringInputs, calculate_decision
 from app.analysis.financial_v2 import Model
 from app.core import database
 from app.services.bol import BolError, validate_ean
+from app.services.freshness import load_market_records, classify
 
 router = APIRouter(prefix="/decision/v2", tags=["decision v2"])
 
@@ -64,7 +65,10 @@ def read_evidence(ean):
                     result.append({"id": row["id"], "measured_at": row["measured_at"],
                                    "payload": {k: v for k, v in payload.items() if k in allowed}})
                 return result
-            return identity, load("bol_product_snapshots", "id"), load("bol_market_snapshots", "snapshot_id")
+            markets = load_market_records(db, ean)
+            if len(markets) > 2000:
+                raise HTTPException(422, "Te veel snapshots voor deze analyse; expliciete historie-selectie is nodig.")
+            return identity, load("bol_product_snapshots", "id"), markets
         finally:
             db.close()
     except sqlite3.Error:
@@ -80,4 +84,4 @@ def analyze(body: DecisionRequest, response: Response):
                                     identity=identity, product_snapshots=products, market_snapshots=markets)
     except ValueError:
         raise HTTPException(422, "De analyse bevat ongeldige of toekomstige brongegevens.") from None
-    return {"ean": body.ean, "analysis_v2": result}
+    return {"ean": body.ean, "analysis_v2": result, "market_freshness": classify(markets, datetime.fromisoformat(result["as_of"]))}

@@ -5,6 +5,7 @@ import { Product } from "../lib/types";
 import { ScoreBar } from "./ScoreBar";
 import { DecisionComparison } from "./DecisionComparison";
 import { FinancialEditor } from "./FinancialEditor";
+import { MarketRefresh } from "./MarketRefresh";
 
 type Props = { product: Product };
 
@@ -22,6 +23,8 @@ export function ProductDetail({ product }: Props) {
   const [shippingCost, setShippingCost] = useState(product.shipping_cost);
   const [commissionRate, setCommissionRate] = useState(product.commission_rate);
   const [returnReserve, setReturnReserve] = useState(2);
+  const [marketRevision,setMarketRevision] = useState(0);
+  const [marketRefreshing,setMarketRefreshing] = useState(false);
 
   const scenario = useMemo(() => {
     const vat = salePrice - salePrice / 1.21;
@@ -52,7 +55,8 @@ export function ProductDetail({ product }: Props) {
       </section>
 
       <FinancialEditor productId={product.id} />
-      <DecisionComparison productId={product.id} />
+      <MarketRefresh productId={product.id} onReload={()=>setMarketRevision(v=>v+1)} onRefreshing={setMarketRefreshing} />
+      <DecisionComparison productId={product.id} refreshRevision={marketRevision} refreshing={marketRefreshing} />
 
       <section className="detail-metrics">
         <div className="panel metric-card"><span>Verkoopprijs</span><strong>{money(product.sale_price)}</strong><small>huidige invoer</small></div>

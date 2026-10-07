@@ -1,5 +1,7 @@
 """Read-only presentation composition; both scoring engines remain unchanged."""
 from math import isfinite
+from datetime import datetime
+from app.services.freshness import classify
 
 from app.analysis.scoring import calculate_scores
 from app.analysis.scoring_v2 import ScoringInputs, calculate_decision, stamp
@@ -10,8 +12,12 @@ from app.services.financial_profiles import Profile, read_profile, scoring_input
 
 def reason_for_difference(v1, v2, market):
     """Deterministic explanation priority, not a claim of causal attribution."""
-    if market['freshness'] == 'stale':
+    if market['freshness'] in ('stale', 'historical'):
         return {'code': 'stale_market', 'text': 'Marktmeting ouder dan 24 uur: vernieuw de marktgegevens voor een actuele v2-beoordeling.'}
+    if market['freshness'] in ('incomplete', 'error'):
+        return {'code': 'failed_market', 'text': 'Laatste marktmeting onvolledig of mislukt. Oudere metingen blijven historie; vernieuw de gegevens voor een actuele v2-beoordeling.'}
+    if market['freshness'] == 'missing' and v2['opportunity_score'] is None:
+        return {'code': 'missing_market', 'text': 'Geen bruikbare marktmeting beschikbaar; vul ontbrekende bewijsgegevens aan en ververs de markt.'}
     codes = {s['code'] for s in v2['safeguards']}
     reasons = {
         'block': 'V2 ziet een bevestigde verkoopblokkade.',
@@ -36,24 +42,7 @@ def reason_for_difference(v1, v2, market):
 
 
 def market_context(v2):
-    evidence = v2['frozen_evidence']['market_snapshots']
-    latest = evidence[0] if evidence else None
-    payload = latest.get('payload', {}) if latest else {}
-    measured = payload.get('measured_at')
-    age = None
-    try:
-        age = (stamp(v2['as_of']) - stamp(measured)).total_seconds() / 3600
-        if age < 0:
-            age = None
-    except (ValueError, TypeError):
-        pass
-    metrics = v2['metrics']['market']
-    return {'snapshot_id': latest['id'] if latest else None, 'measured_at': measured,
-            'age_hours': age, 'freshness': 'missing' if not latest else ('invalid' if age is None else ('stale' if age > 24 else 'fresh')),
-            'source': payload.get('source'), 'api_version': payload.get('api_version'),
-            'status': metrics['status'], 'price_min': metrics['price_min'], 'price_max': metrics['price_max'],
-            'unique_seller_count': metrics['unique_seller_count'], 'offer_count': metrics['offer_count'],
-            'data_kind': 'official_measured', 'counts_kind': 'derived'}
+    return classify(v2['frozen_evidence']['market_snapshots'], datetime.fromisoformat(v2['as_of']))
 
 
 def present_comparison(product, v2):

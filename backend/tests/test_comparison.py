@@ -140,7 +140,7 @@ def test_comparison_does_not_create_missing_database(tmp_path, monkeypatch):
 
 def test_stale_price_never_labelled_current_and_zero_not_missing():
     item = scenarios()[-1]['comparison']
-    assert item['market']['freshness'] == 'stale'
+    assert item['market']['freshness'] == 'historical'
     assert item['market']['price_min'] == 24.2
     assert item['analysis_v2']['opportunity_score'] is None
     p = legacy_product()

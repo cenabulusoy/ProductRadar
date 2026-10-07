@@ -11,6 +11,7 @@ from app.api.decision import read_evidence
 from app.analysis.scoring_v2 import calculate_decision
 from app.services.financial_profiles import Profile, read_profile, history, preview_profile, save_profile, validate_evidence, scoring_inputs
 from app.services.bol import BolError
+from app.services.freshness import classify
 
 router=APIRouter(prefix='/products',tags=['financial inputs v2'])
 
@@ -98,4 +99,4 @@ def stored_decision(product_id:int,response:Response,version:int|None=Query(None
         validate_evidence(profile,p,now)
         return calculate_decision(scoring_inputs(profile),as_of=now,ean=p.get('ean') or '',identity=identity,product_snapshots=products,market_snapshots=markets)
     output=safe_action(calculation)
-    return {'financial_input_version':saved['version'] if saved else None,'financial_profile_id':saved['id'] if saved else None,'analysis_v2':output}
+    return {'financial_input_version':saved['version'] if saved else None,'financial_profile_id':saved['id'] if saved else None,'analysis_v2':output,'market_freshness':classify(markets,now)}

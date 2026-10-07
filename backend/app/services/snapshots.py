@@ -81,7 +81,7 @@ def serialize(row):
             "preview": json.loads(row["payload"])}
 
 
-def save_snapshot(receipt):
+def save_snapshot(receipt, on_saved=None):
     try:
         with get_connection() as db:
             # Serialize writers so concurrent retries create only one snapshot.
@@ -112,6 +112,8 @@ def save_snapshot(receipt):
                      market["api_version"], market["country"], market["condition"], market["status"],
                      json.dumps(market, ensure_ascii=False)))
             row = db.execute("SELECT * FROM bol_product_snapshots WHERE id = ?", (cursor.lastrowid,)).fetchone()
+            if on_saved is not None:
+                on_saved(db, row['id'])
             return serialize(row)
     except sqlite3.Error:
         raise BolError(503, "Opslaan is tijdelijk niet beschikbaar. Probeer het opnieuw.") from None

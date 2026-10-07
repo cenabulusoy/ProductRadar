@@ -199,6 +199,7 @@ def test_additive_migration_preserves_legacy_rows_and_is_repeatable(client):
     client, _ = client
     before = client.get('/api/products').json()
     with database.get_connection() as db:
+        db.execute('DROP TABLE bol_market_refresh_requests')
         db.execute('DROP TABLE bol_market_snapshots')
         db.execute('DROP TABLE bol_product_snapshots')
         db.execute('DROP TABLE bol_product_identities')
@@ -249,6 +250,7 @@ def test_failed_migration_rolls_back_all_new_schema(client, monkeypatch):
     client, _ = client
     before = client.get('/api/products').json()
     with database.get_connection() as db:
+        db.execute('DROP TABLE bol_market_refresh_requests')
         db.execute('DROP TABLE bol_market_snapshots')
         db.execute('DROP TABLE bol_product_snapshots')
         db.execute('DROP TABLE bol_product_identities')

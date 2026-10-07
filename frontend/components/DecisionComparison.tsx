@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Comparison } from "../lib/comparison-types";
+import { FreshnessView } from "./MarketFreshness";
 
 const API = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
 const labels: Record<string, string> = {
@@ -58,12 +59,13 @@ export function ComparisonView({ comparison }: { comparison: Comparison }) {
     ] as const).map(([key, title, help]) => <div key={key}><h4>{title}</h4><strong>{score(v2.subscores[key])}</strong><small>{help}</small></div>)}</div>
     <p className="comparison-note">Scores zijn door ProductRadar berekend. Onbekend is geen nul.</p>
     <section className="comparison-market" aria-label="Marktbron en ouderdom"><h3>Gebruikte marktmeting</h3>
-      {market.freshness === "stale" && <p className="comparison-warning" role="alert">Marktdata ouder dan 24 uur. Vernieuw de marktgegevens voordat v2 een actuele definitieve beoordeling kan geven. Getoonde prijzen zijn uitsluitend historisch.</p>}
+      <FreshnessView market={market} />
+      {["stale","historical"].includes(market.freshness) && <p className="comparison-warning" role="alert">Marktdata ouder dan 24 uur. Vernieuw de marktgegevens voordat v2 een actuele definitieve beoordeling kan geven. Getoonde prijzen zijn uitsluitend historisch.</p>}
       {market.freshness === "missing" ? <p>Geen opgeslagen marktmeting beschikbaar.</p> : <>
-        <p>{market.source ?? "Onbekende bron"} · {market.api_version ?? "Onbekende versie"} · Officiële bol-meting</p>
+        <p>{market.source ?? "Onbekende bron"} · {market.api_version ?? "Onbekende versie"} · {["error","incomplete"].includes(market.freshness)?"Onvolledige/mislukte bol-ophaalpoging":"Officiële bol-meting"}</p>
         <p>Gemeten: {market.measured_at ?? "Onbekend"} · Ouderdom bij analyse: {market.age_hours == null ? "Onbekend" : `${number(market.age_hours)} uur`} · Snapshot {market.snapshot_id ?? "onbekend"}</p>
         {market.freshness === "invalid" && <p className="comparison-warning">Het meetmoment is ongeldig. Deze bron kan geen actuele beoordeling onderbouwen.</p>}
-        <p>{market.freshness === "fresh" ? "Prijsrange in opgeslagen meting (maximaal 24 uur oud)" : "Historische prijsrange — geen actuele prijs"}: {number(market.price_min)} – {number(market.price_max)} EUR</p>
+        <p>{market.freshness === "current" ? "Prijsrange in opgeslagen meting (maximaal 24 uur oud)" : "Historische prijsrange — geen actuele prijs"}: {number(market.price_min)} – {number(market.price_max)} EUR</p>
         <p>Unieke verkopers: {number(market.unique_seller_count)} · Aanbiedingen: {number(market.offer_count)} · Door ProductRadar geteld</p>
         {market.status !== "complete" && <p>Geen volledig bruikbare aanbiedingenmeting. Onbekende tellingen betekenen niet dat er weinig concurrentie is.</p>}
       </>}
@@ -86,11 +88,13 @@ export function ComparisonView({ comparison }: { comparison: Comparison }) {
   </div>;
 }
 
-export function DecisionComparison({ productId, api = API }: { productId: number; api?: string }) {
+export function DecisionComparison({ productId, api = API, refreshRevision=0, refreshing=false }: { productId: number; api?: string; refreshRevision?:number;refreshing?:boolean }) {
   const [data, setData] = useState<Comparison | null>(null);
   const [loading, setLoading] = useState(false), [error, setError] = useState("");
   const requestId = useRef(0);
-  useEffect(() => { requestId.current++; setData(null); setError(""); setLoading(false); return () => { requestId.current++; }; }, [productId, api]);
+  const loadedRevision = useRef(0);
+  useEffect(()=>{loadedRevision.current=0;},[productId,api]);
+  useEffect(() => { requestId.current++; setData(null); setError(""); setLoading(false); if(refreshRevision>loadedRevision.current&&!refreshing){loadedRevision.current=refreshRevision;void load();} return () => { requestId.current++; }; }, [productId, api, refreshRevision, refreshing]);
   async function load() {
     const current = ++requestId.current;
     setLoading(true); setData(null); setError("");
@@ -104,7 +108,8 @@ export function DecisionComparison({ productId, api = API }: { productId: number
     finally { if (current === requestId.current) setLoading(false); }
   }
   return <section className="panel comparison-panel"><h2>Decision Engine v1 versus v2</h2><p>Vergelijk de bestaande beoordeling met de nieuwe engine op opgeslagen gegevens.</p>
-    <button type="button" disabled={loading} onClick={load}>{loading ? "Vergelijking laden…" : "Vergelijk opgeslagen gegevens"}</button>
+    <button type="button" disabled={loading||refreshing} onClick={load}>{loading ? "Vergelijking laden…" : "Vergelijk opgeslagen gegevens"}</button>
+    {refreshing&&<p role="status">Marktrefresh bezig. De vorige v2-beoordeling is tijdelijk verborgen.</p>}
     {error && <p role="alert">{error}</p>}{data && <ComparisonView comparison={data} />}
   </section>;
 }

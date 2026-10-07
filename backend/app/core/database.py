@@ -22,6 +22,8 @@ def init_db() -> None:
         migrate_snapshots(db)
         from app.services.financial_profiles import migrate_financial_profiles
         migrate_financial_profiles(db)
+        from app.services.market_refresh import migrate_refresh
+        migrate_refresh(db)
         db.execute(
             """
             CREATE TABLE IF NOT EXISTS products (

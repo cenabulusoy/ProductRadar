@@ -9,6 +9,7 @@ from pydantic import Field, model_validator
 from app.analysis.financial_v2 import FinancialInputs, Model, calculate_financial
 from app.core import database
 from app.services.bol import BolError, validate_ean
+from app.services.freshness import load_market_records
 
 router = APIRouter(prefix="/financial/v2", tags=["financial v2"])
 
@@ -51,6 +52,9 @@ def read_market(ean, snapshot_id):
                 else:
                     row = db.execute("""SELECT snapshot_id, payload FROM bol_market_snapshots WHERE ean=?
                                          ORDER BY measured_at DESC, snapshot_id DESC LIMIT 1""", (ean,)).fetchone()
+            if snapshot_id is None:
+                records = load_market_records(db, ean)
+                return (records[0]['payload'], records[0]['id'] or None) if records else (None, None)
             if row is None:
                 if snapshot_id is not None:
                     raise HTTPException(404, "Marktsnapshot niet gevonden voor deze EAN.")
