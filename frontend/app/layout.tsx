@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl">
-      <body>{children}</body>
+      <body><nav aria-label="ProductRadar"><a href="/">Product Hunter</a> · <a href="/discovery">Product Discovery</a></nav>{children}</body>
     </html>
   );
 }
