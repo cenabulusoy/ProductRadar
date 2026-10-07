@@ -20,6 +20,8 @@ def init_db() -> None:
     with get_connection() as db:
         db.execute("BEGIN IMMEDIATE")
         migrate_snapshots(db)
+        from app.services.financial_profiles import migrate_financial_profiles
+        migrate_financial_profiles(db)
         db.execute(
             """
             CREATE TABLE IF NOT EXISTS products (

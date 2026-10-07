@@ -9,6 +9,7 @@ require.extensions['.tsx'] = (module, filename) => {
   });
   module._compile(compiled.outputText, filename);
 };
+require.extensions['.ts'] = require.extensions['.tsx'];
 const ProductPage = require('../app/products/[id]/page.tsx').default;
 const originalFetch = global.fetch;
 afterEach(() => { global.fetch = originalFetch; });

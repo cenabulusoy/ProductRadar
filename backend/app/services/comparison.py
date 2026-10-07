@@ -5,6 +5,7 @@ from app.analysis.scoring import calculate_scores
 from app.analysis.scoring_v2 import ScoringInputs, calculate_decision, stamp
 from app.api.decision import read_evidence
 from app.services.bol import BolError, validate_ean
+from app.services.financial_profiles import Profile, read_profile, scoring_inputs, validate_evidence
 
 
 def reason_for_difference(v1, v2, market):
@@ -96,6 +97,12 @@ def compare_saved_product(product, as_of):
     except BolError:
         identity, products, markets = None, [], []
     # Do not manufacture a VAT basis, missing costs or an input timestamp from legacy values.
-    result = calculate_decision(ScoringInputs(financial={}), as_of=as_of, ean=ean,
+    saved = read_profile(product['id']) if product.get('id') else None
+    profile = Profile.model_validate(saved['profile']) if saved else Profile(financial={})
+    validate_evidence(profile, product, as_of)
+    result = calculate_decision(scoring_inputs(profile), as_of=as_of, ean=ean,
                                 identity=identity, product_snapshots=products, market_snapshots=markets)
-    return present_comparison(product, result)
+    comparison = present_comparison(product, result)
+    comparison['financial_input_version'] = saved['version'] if saved else None
+    comparison['financial_profile_id'] = saved['id'] if saved else None
+    return comparison

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Product } from "../lib/types";
 import { ScoreBar } from "./ScoreBar";
 import { DecisionComparison } from "./DecisionComparison";
+import { FinancialEditor } from "./FinancialEditor";
 
 type Props = { product: Product };
 
@@ -50,6 +51,7 @@ export function ProductDetail({ product }: Props) {
         </div>
       </section>
 
+      <FinancialEditor productId={product.id} />
       <DecisionComparison productId={product.id} />
 
       <section className="detail-metrics">

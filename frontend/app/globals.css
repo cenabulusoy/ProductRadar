@@ -409,3 +409,19 @@
 .comparison-table a { color: #8ee8ce; }
 .comparison-pagination { display: flex; gap: 12px; margin: 18px 0; }
 @media (max-width: 650px) { .comparison-scores, .comparison-columns { grid-template-columns: 1fr; } .comparison-panel { padding: 16px; } }
+
+/* Sprint 4.4 financial inputs */
+
+.financial-editor { padding:24px; margin:24px 0; }
+.financial-editor fieldset { border:1px solid #29415e; border-radius:10px; margin:18px 0; padding:18px; }
+.financial-editor legend { font-size:18px; font-weight:700; }
+.financial-editor label { display:block; margin:12px 0; color:#c5d3e5; }
+.financial-editor input:not([type=checkbox]), .financial-editor select { display:block; width:100%; max-width:520px; margin-top:6px; padding:10px; border:1px solid #435971; border-radius:7px; background:#11253a; color:#fff; font:inherit; }
+.financial-editor button { padding:10px 14px; border:1px solid #51748e; border-radius:7px; background:#17324a; color:#fff; margin:8px 8px 8px 0; cursor:pointer; }
+.financial-editor button:disabled { opacity:.5; cursor:default; }
+.financial-editor :focus-visible { outline:3px solid #55d6b3; outline-offset:3px; }
+.financial-input-row { margin:10px 0; padding:12px; border:1px solid #29415e; border-radius:8px; }
+.financial-input-row summary { cursor:pointer; font-weight:600; }
+.financial-preview-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+.financial-preview-grid div { background:#11253a; padding:14px; border-radius:8px; }
+.financial-preview-grid dd { margin:8px 0; font-size:20px; }
