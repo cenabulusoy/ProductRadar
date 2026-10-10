@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ProvenanceLegend } from "./DecisionComparison";
 import { FreshnessView } from "./MarketFreshness";
+import { DiscoveryMonitoring } from "./DiscoveryMonitoring";
 
 type Signal = { value: unknown; provenance: {kind: string; source: string; recorded_at: string} | null };
 type Candidate = {id:number;ean:string|null;title:string|null;brand:string|null;category:string|null;
@@ -60,6 +61,7 @@ export function Discovery({api=API}:{api?:string}) {
   return <section className="panel"><h1>Product Discovery</h1>
     <p>Kandidaten om verder te onderzoeken. V1 blijft standaard; geen Opportunity Score of inkoopadvies.</p>
     <p>White Spots (beta): {capability}</p>
+    <DiscoveryMonitoring api={api} candidateId={selected?.id}/>
     <fieldset disabled={busy}><legend>Nieuwe kandidaten zoeken · maximaal één bol-lijstpagina</legend>
       <label>Zoekterm <input value={query} onChange={e=>setQuery(e.target.value)} maxLength={50}/></label>
       <label>Of categorie-ID <input value={queryCategory} onChange={e=>setQueryCategory(e.target.value)} maxLength={11}/></label>

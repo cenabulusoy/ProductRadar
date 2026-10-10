@@ -2,6 +2,8 @@ const {test,afterEach}=require('node:test'),assert=require('node:assert/strict')
 const fs=require('node:fs'),ts=require('typescript'),React=require('react'),{create}=require('react-test-renderer');
 const {act}=React;global.IS_REACT_ACT_ENVIRONMENT=true;
 for(const ext of ['.ts','.tsx'])require.extensions[ext]=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS}}).outputText,f);
+// Isolate the Sprint 5.1 unit tests from the separately tested monitoring child.
+require('../components/DiscoveryMonitoring.tsx').DiscoveryMonitoring=()=>null;
 const {Discovery,CandidateView,unknown}=require('../components/Discovery.tsx');
 const market=require('../../backend/tests/fixtures/comparison_scenarios.json')[0].comparison.market;
 const item={id:1,ean:'9781538744017',title:'Fixture',brand:null,category:null,sources:['bol_product_list'],status:'Verder onderzoeken',reasons:['Zoekzichtbaarheid'],missing:['financial_profile','sales_volume'],evidence_quality:40,quality_notice:'Bewijsdekking, geen verkoopkans',financial_notice:'Nog geen inkoopadvies — financiële gegevens ontbreken',last_measured_at:'2026-10-07',signals:{rating_average:{value:null,provenance:null},rating_count:{value:0,provenance:{kind:'derived',source:'bol',recorded_at:'2026-10-07'}},visibility:{value:{list_position:1},provenance:{kind:'derived',source:'bol_product_list',recorded_at:'2026-10-07'}},sales_volume:{value:null,provenance:null}},market:{...market,freshness:'missing',usable_for_current_analysis:false},market_history:[]};

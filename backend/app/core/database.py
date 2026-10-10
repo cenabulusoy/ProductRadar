@@ -26,6 +26,8 @@ def init_db() -> None:
         migrate_refresh(db)
         from app.services.discovery import migrate_discovery
         migrate_discovery(db)
+        from app.services.discovery_monitoring import migrate_monitoring
+        migrate_monitoring(db)
         db.execute(
             """
             CREATE TABLE IF NOT EXISTS products (
