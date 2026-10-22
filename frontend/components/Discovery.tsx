@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ProvenanceLegend } from "./DecisionComparison";
 import { FreshnessView } from "./MarketFreshness";
+import { RankingVisibility } from "./RankingVisibility";
 import { DiscoveryMonitoring } from "./DiscoveryMonitoring";
 
 type Signal = { value: unknown; provenance: {kind: string; source: string; recorded_at: string} | null };
@@ -83,7 +84,7 @@ export function Discovery({api=API}:{api?:string}) {
       <td>{x.evidence_quality}/100 · derived<br/>{x.market.freshness}</td><td>{x.reasons.join(" ")}<br/>{x.sources.join(", ")}</td></tr>)}</tbody></table></div>
     {!items.length&&!busy&&<p>Geen kandidaten. Zoek expliciet op een productterm of categorie; er loopt geen automatische crawl.</p>}
     <button disabled={busy||offset===0} onClick={()=>action(()=>load(Math.max(0,offset-25)))}>Vorige</button><button disabled={busy||offset+25>=total} onClick={()=>action(()=>load(offset+25))}>Volgende</button>
-    {selected&&<><CandidateView item={selected}/><button disabled={busy||!selected.ean} onClick={()=>action(async()=>{const id=selected.id;setSelected(null);setNotice("Nieuwe meting ophalen; vorige metingen blijven historie.");const next=await request(`/discovery/candidates/${id}/measure`,{});setSelected(next);setNotice(next.market.usable_for_current_analysis?"Nieuwe meting opgeslagen.":"Nieuwe meting niet volledig bruikbaar; geen actuele marktprijs.");await load(offset);})}>Catalogus, ratings en markt meten</button>
+    {selected&&<><CandidateView item={selected}/>{selected.ean&&<RankingVisibility api={api} ean={selected.ean}/>}<button disabled={busy||!selected.ean} onClick={()=>action(async()=>{const id=selected.id;setSelected(null);setNotice("Nieuwe meting ophalen; vorige metingen blijven historie.");const next=await request(`/discovery/candidates/${id}/measure`,{});setSelected(next);setNotice(next.market.usable_for_current_analysis?"Nieuwe meting opgeslagen.":"Nieuwe meting niet volledig bruikbaar; geen actuele marktprijs.");await load(offset);})}>Catalogus, ratings en markt meten</button>
       <button disabled={busy} onClick={()=>action(async()=>{const p=await request(`/discovery/candidates/${selected.id}/promotion-preview`);setPromotion(p.notice+` Bestaande producten: ${p.existing_product_ids.join(', ')||'geen'}.`);})}>Promotie bekijken — niets toevoegen</button>{promotion&&<p>{promotion}</p>}</>}
     <ProvenanceLegend/>
   </section>;

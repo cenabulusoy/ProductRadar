@@ -28,6 +28,8 @@ def init_db() -> None:
         migrate_discovery(db)
         from app.services.discovery_monitoring import migrate_monitoring
         migrate_monitoring(db)
+        from app.services.rankings import migrate_rankings
+        migrate_rankings(db)
         db.execute(
             """
             CREATE TABLE IF NOT EXISTS products (
